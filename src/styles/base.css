@@ -1,0 +1,44 @@
+@layer base {
+  body {
+    font-family: var(--font-manrope);
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 25px;
+  }
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 2px;
+    line-height: 58px;
+  }
+  h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.5px;
+    line-height: 44px;
+  }
+  h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.15px;
+    line-height: 36px;
+  }
+  h4 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 2px;
+    line-height: 38px;
+  }
+  h5 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.7px;
+    line-height: 33px;
+  }
+  h6 {
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.3px;
+    line-height: 24px;
+  }
+}
