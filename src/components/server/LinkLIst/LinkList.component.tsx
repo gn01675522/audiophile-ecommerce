@@ -18,10 +18,9 @@ const navLinks: NavLinks[] = [
 const ulBaseClass =
   "flex h-max bg-black text-subtitle text-white tracking-[2px] text-center";
 
-const ulMobileClass =
-  "absolute w-full flex-col gap-4 items-center top-[90px] left-0";
-const ulTabletClass = "md:flex-row md:justify-between md:px-6 md:gap-[34px]";
-const ulDesktopClass = "lg:static lg:w-min";
+const ulMobileClass = 'w-full flex-col gap-4 items-center'
+const ulTabletClass = "md:flex-row md:justify-between md:gap-[34px]";
+const ulDesktopClass = " lg:w-min";
 
 const allClasses = clsx(
   ulBaseClass,
@@ -31,11 +30,11 @@ const allClasses = clsx(
 );
 
 type PropsType = {
-  className: string;
+  className?: string;
 };
 
 const LinkList: FC<PropsType> = ({ className }) => {
-  const combinedClass = clsx(allClasses, className);
+  const combinedClass = clsx(allClasses, className ? className : "");
 
   return (
     <ul className={combinedClass}>

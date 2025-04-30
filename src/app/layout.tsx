@@ -1,6 +1,7 @@
 import { Manrope } from "next/font/google";
 
 import Navbar from "@/components/client/Navbar/Navbar.component";
+import Footer from "@/components/server/Footer/Footer.component";
 
 import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";
@@ -25,8 +26,13 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-        <Navbar />
-        {children}
+        <header>
+          <Navbar />
+        </header>
+        <main>{children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

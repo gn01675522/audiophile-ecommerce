@@ -39,7 +39,9 @@ const Navbar: FC = () => {
         ))}
       </label>
       <Logo className="md:flex-1 md:justify-start lg:flex-initial" />
-      <LinkList className={`${isOpen ? "flex" : "hidden"} lg:flex`} />
+      <div className="absolute w-full top-22.5 left-0 lg:static">
+        <LinkList className={`${isOpen ? "flex" : "hidden"} md:px-6 lg:flex`} />
+      </div>
 
       <Cart />
     </nav>
