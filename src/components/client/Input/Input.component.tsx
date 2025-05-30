@@ -1,6 +1,7 @@
 "use client";
 import { useState, forwardRef } from "react";
 import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import type { Ref, FocusEvent } from "react";
 import type { IInput } from "./input.types";
@@ -36,9 +37,8 @@ const Input = forwardRef<HTMLInputElement, IInput>(
 
     const touchedByWhich = isTouched || isOnTouched;
 
-    const combinedLabelClass = clsx(
-      labelSetting,
-      labelClassName ? labelClassName : ""
+    const combinedLabelClass = twMerge(
+      clsx(labelSetting, labelClassName ? labelClassName : "")
     );
 
     const combinedInputClass = clsx(

@@ -1,4 +1,6 @@
+"use client";
 import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import { ButtonVariant } from "./button.types";
 
@@ -9,16 +11,16 @@ const buttonBaseSetting =
   "flex justify-center items-center gap-[13.32px] text-xs font-bold tracking-[1px] leading-[18px] cursor-pointer";
 
 const btnStructureByVariant = {
-  primary: clsx(buttonBaseSetting, "w-[160px] h-[48px]"),
-  secondary: clsx(buttonBaseSetting, "w-[160px] h-[48px]"),
-  ghost: clsx(buttonBaseSetting, "w-max h-[18px]"),
+  primary: twMerge(buttonBaseSetting, "w-[160px] h-[48px]"),
+  secondary: twMerge(buttonBaseSetting, "w-[160px] h-[48px]"),
+  ghost: twMerge(buttonBaseSetting, "w-max h-[18px]"),
 };
 
 const btnStyleByVariant = {
   primary: "bg-primary hover:bg-primary-lt text-white",
   secondary:
     "bg-white text-black border border-black hover:bg-black hover:text-white",
-  ghost: "text-secondary hover:text-primary",
+  ghost: "text-[#00000080] hover:text-primary",
 };
 
 const Button: FC<IButton> = ({
@@ -29,10 +31,12 @@ const Button: FC<IButton> = ({
   variant = ButtonVariant.primary,
   ...props
 }) => {
-  const classByVariant = clsx(
-    btnStructureByVariant[variant],
-    btnStyleByVariant[variant],
-    className ? className : ""
+  const classByVariant = twMerge(
+    clsx(
+      btnStructureByVariant[variant],
+      btnStyleByVariant[variant],
+      className ? className : ""
+    )
   );
 
   return (

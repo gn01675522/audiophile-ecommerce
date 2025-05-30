@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Logo from "../Logo/Logo.component";
 import LinkList from "../LinkLIst/LinkList.component";
@@ -16,7 +16,7 @@ const footerTabletClass =
 
 const footerDesktopClass = "lg:pt-[75px] lg:pb-12 lg:px-[165px]";
 
-const combinedClass = clsx(
+const combinedClass = twMerge(
   footerBaseClass,
   footerTabletClass,
   footerDesktopClass
