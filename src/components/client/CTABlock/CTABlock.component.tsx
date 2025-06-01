@@ -20,7 +20,7 @@ const CTABlock: FC = () => {
   return (
     <section className={combinedClasses}>
       <span className="text-white text-sm tracking-[10px] opacity-50 mb-4 md:mb-6">
-        {texts.home.banner.subTitle}
+        {texts.common.newProduct.toUpperCase()}
       </span>
       <h1 className="text-white text-[36px] leading-10 mb-6 md:text-4xl md:leading-14 ">
         {texts.home.banner.title}
@@ -28,7 +28,9 @@ const CTABlock: FC = () => {
       <p className="text-white w-82 opacity-75 md:w-[349px] mb-7 md:mb-10">
         {texts.home.banner.paragraphs}
       </p>
-      <Button variant={ButtonVariant.primary}>SEE PRODUCT</Button>
+      <Button variant={ButtonVariant.primary}>
+        {texts.common.seeProduct.toUpperCase()}
+      </Button>
     </section>
   );
 };

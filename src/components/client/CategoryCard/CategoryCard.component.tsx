@@ -11,6 +11,8 @@ import headPhonesImg from "@/assets/category-card/image-category-headphones.png"
 import speakersImg from "@/assets/category-card/image-category-speakers.png";
 import earphonesImg from "@/assets/category-card/image-category-earphones.png";
 
+import { texts } from "@/shared/texts";
+
 import { CATEGORY_CLASSES } from "@/shared/shared.types";
 
 import type { FC } from "react";
@@ -66,7 +68,7 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
           endIcon={<ArrowForwardIosIcon style={{ fontSize: "12px" }} />}
           onClick={onClickToNavigate}
         >
-          SHOP
+          {texts.common.shop.toUpperCase()}
         </Button>
       </div>
     </Link>

@@ -13,6 +13,7 @@ const buttonBaseSetting =
 const btnStructureByVariant = {
   primary: twMerge(buttonBaseSetting, "w-[160px] h-[48px]"),
   secondary: twMerge(buttonBaseSetting, "w-[160px] h-[48px]"),
+  secondaryInvert: twMerge(buttonBaseSetting, "w-[160px] h-[48px]"),
   ghost: twMerge(buttonBaseSetting, "w-max h-[18px]"),
 };
 
@@ -20,6 +21,7 @@ const btnStyleByVariant = {
   primary: "bg-primary hover:bg-primary-lt text-white",
   secondary:
     "bg-white text-black border border-black hover:bg-black hover:text-white",
+  secondaryInvert: "bg-black text-white hover:bg-white hover:text-black",
   ghost: "text-[#00000080] hover:text-primary",
 };
 
