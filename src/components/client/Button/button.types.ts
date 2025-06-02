@@ -3,7 +3,8 @@ import type { ReactNode, ButtonHTMLAttributes } from "react";
 export enum ButtonVariant {
   primary = "primary",
   secondary = "secondary",
-  secondaryInvert = "secondaryInvert",
+  black = "black",
+  transparent = "transparent",
   ghost = "ghost",
 }
 

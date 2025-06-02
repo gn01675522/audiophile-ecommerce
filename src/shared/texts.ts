@@ -17,6 +17,10 @@ export const texts = {
         "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
       paragraph: "",
     },
+    zx7: {
+      category: "speaker",
+      name: "zx7",
+    },
   },
   home: {
     banner: {
