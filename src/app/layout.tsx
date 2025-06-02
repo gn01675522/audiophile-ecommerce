@@ -47,7 +47,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
                 />
               ))}
             </section>
-            <section>
+            <section className="flex flex-col w-full items-center">
               <IntroCard />
               <SimpleIntroCard />
               <SplitIntroCard />

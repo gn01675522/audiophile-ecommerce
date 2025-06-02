@@ -1,5 +1,5 @@
 const SplitIntroCard = () => {
-  return <div></div>;
+  return <div className="rounded-[8px]"></div>;
 };
 
 export default SplitIntroCard;

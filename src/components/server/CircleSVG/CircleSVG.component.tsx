@@ -1,16 +1,12 @@
 import type { FC } from "react";
 
 type PropsType = {
-  width?: number;
-  height?: number;
   className?: string;
 };
 
-const CircleSVG: FC<PropsType> = ({ width = 944, height = 944, className }) => {
+const CircleSVG: FC<PropsType> = ({ className }) => {
   return (
     <svg
-      width={width}
-      height={height}
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       viewBox="0 0 944 944"
