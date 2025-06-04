@@ -28,7 +28,7 @@ const SimpleIntroCard = () => {
           src={image.src}
           alt="zx7 speaker image"
           fill
-          sizes="(max-width: 767px) 100%, (max-width: 1439) 100%, 100%"
+          sizes="(max-width: 767px) 327px, (max-width: 1439) 689px, 1110px"
           className={twMerge(image.class, "-z-1")}
         />
       ))}

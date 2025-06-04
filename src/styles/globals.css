@@ -31,4 +31,6 @@
 
   --breakpoint-md: 48rem;
   --breakpoint-lg: 90rem;
+  --breakpoint-custom-588: 588px;
+  --breakpoint-custom-1024: 1024px;
 }

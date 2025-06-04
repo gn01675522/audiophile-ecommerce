@@ -5,7 +5,11 @@ import Footer from "@/components/server/Footer/Footer.component";
 import CategoryCard from "@/components/client/CategoryCard/CategoryCard.component";
 import IntroCard from "@/components/client/IntroCard/IntroCard.component";
 import SimpleIntroCard from "@/components/client/SimpleIntroCard/SimpleIntroCard.component";
-import SplitIntroCard from "@/components/client/SplitIntroCard/SplitIntroCard.component";
+import BasicIntroCard from "@/components/client/BasicIntroCard/BasicIntroCard.component";
+import ImageCard from "@/components/server/ImageCard/ImageCard.component";
+import yx1EarphonesDesktop from "@/assets/intro-card/desktop/image-earphones-yx1.jpg";
+import yx1EarphonesTablet from "@/assets/intro-card/tablet/image-earphones-yx1.jpg";
+import yx1EarphonesMobile from "@/assets/intro-card/mobile/image-earphones-yx1.jpg";
 
 import { linksSetting } from "@/shared/linksSetting";
 
@@ -13,6 +17,18 @@ import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";
 
 import "../styles/globals.css";
+
+const imageByRWD = [
+  { src: yx1EarphonesDesktop, class: "h-80 hidden md:hidden lg:block" },
+  {
+    src: yx1EarphonesTablet,
+    class: " h-80 hidden md:block lg:hidden",
+  },
+  {
+    src: yx1EarphonesMobile,
+    class: "h-50 block md:hidden lg:hidden",
+  },
+];
 
 type RootLayoutProps = { children: ReactNode };
 
@@ -50,7 +66,20 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
             <section className="flex flex-col w-full gap-6 items-center">
               <IntroCard />
               <SimpleIntroCard />
-              <SplitIntroCard />
+              <div className="flex flex-col gap-6 w-full min-w-[327px] max-w-[1110px] custom-588:flex-row custom-588:gap-[11px] custom-1024:gap-[30px]">
+                <div className="w-[50%] min-w-[264.5px] max-w-[540px]">
+                  {imageByRWD.map((image, i) => (
+                    <ImageCard
+                      key={i}
+                      src={image.src}
+                      alt="YX1 earphones"
+                      sizes="(max-width: 767px) 327px, (max-width: 1439px) 339px, 540px"
+                      className={image.class}
+                    />
+                  ))}
+                </div>
+                <BasicIntroCard className="w-[50%]" />
+              </div>
             </section>
             <section></section>
           </div>

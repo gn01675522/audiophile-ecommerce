@@ -21,6 +21,10 @@ export const texts = {
       category: "speaker",
       name: "zx7",
     },
+    yx1: {
+      category: "earphones",
+      name: "yx1",
+    },
   },
   home: {
     banner: {
