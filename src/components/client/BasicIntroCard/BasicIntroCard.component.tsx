@@ -1,9 +1,12 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 import Button from "../Button/Button.component";
 import { ButtonVariant } from "../Button/button.types";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 
-import { basicIntroCardWrapperClassesCombined } from "./BasicIntroCard.styles";
+import { basicIntroCardWrapperClasses } from "./BasicIntroCard.styles";
 
 import { texts } from "@/shared/texts";
 
@@ -14,16 +17,26 @@ type PropsType = {
 };
 
 const BasicIntroCard: FC<PropsType> = ({ className }) => {
-  const cardTitle = `${texts.product.yx1.name.toUpperCase()} ${texts.product.yx1.category.toUpperCase()}`;
+  const router = useRouter();
+  const cardTitle = `${texts.product.yx1.name} ${texts.product.yx1.category}`;
   const wrapperCombined = twMerge(
-    clsx(basicIntroCardWrapperClassesCombined, className)
+    clsx(basicIntroCardWrapperClasses, className)
   );
+
+  const onClickToNavigation = () => {
+    router.push("/product/yx1");
+  };
+
   return (
     <div className={wrapperCombined}>
       <div className="flex flex-col gap-8">
-        <h2 className="text-xl tracking-[2px]">{cardTitle}</h2>
-        <Button variant={ButtonVariant.transparent}>
-          {texts.common.seeProduct.toUpperCase()}
+        <h2 className="text-xl tracking-[2px] uppercase">{cardTitle}</h2>
+        <Button
+          variant={ButtonVariant.transparent}
+          onClick={onClickToNavigation}
+          className="uppercase"
+        >
+          {texts.common.seeProduct}
         </Button>
       </div>
     </div>

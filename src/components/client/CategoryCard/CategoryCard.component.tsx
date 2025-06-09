@@ -51,9 +51,9 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
   return (
     <Link
       href={link}
-      className="flex w-[327px] h-[217px] items-end md:w-[223px] lg:w-[350px] lg:h-[284px]"
+      className="flex w-[327px] h-[217px] items-end md:w-[223px] xl:w-[350px] xl:h-[284px]"
     >
-      <div className="relative flex flex-col w-full h-[165px] gap-[17px] items-center pt-22 pb-5.5 bg-ghost rounded-lg lg:h-51 lg:pb-6 lg:pt-29">
+      <div className="relative flex flex-col w-full h-[165px] gap-[17px] items-center pt-22 pb-5.5 bg-ghost rounded-lg xl:h-51 xl:pb-6 xl:pt-29">
         <div className="absolute top-0 left-1/2 w-max h-max -translate-y-2/6 -translate-x-1/2">
           <Image
             src={imgSelector.src}
@@ -67,8 +67,9 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
           variant={ButtonVariant.ghost}
           endIcon={<ArrowForwardIosIcon style={{ fontSize: "12px" }} />}
           onClick={onClickToNavigate}
+          className="uppercase"
         >
-          {texts.common.shop.toUpperCase()}
+          {texts.common.shop}
         </Button>
       </div>
     </Link>

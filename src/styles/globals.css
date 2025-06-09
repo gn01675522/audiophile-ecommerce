@@ -29,8 +29,8 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 90rem;
-  --breakpoint-custom-588: 588px;
-  --breakpoint-custom-1024: 1024px;
+  --breakpoint-sm: 588px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
 }

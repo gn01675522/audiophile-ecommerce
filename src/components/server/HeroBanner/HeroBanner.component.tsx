@@ -12,17 +12,17 @@ import type { FC } from "react";
 const imageConfig = [
   {
     src: desktopBannerImage,
-    class: "hidden md:hidden lg:block",
+    class: "hidden md:hidden xl:block",
     category: "mobile",
   },
   {
     src: tabletBannerImage,
-    class: "hidden md:block lg:hidden",
+    class: "hidden md:block xl:hidden",
     category: "tablet",
   },
   {
     src: mobileBannerImage,
-    class: "block md:hidden lg:hidden",
+    class: "block md:hidden xl:hidden",
     category: "desktop",
   },
 ];
@@ -30,7 +30,7 @@ const imageConfig = [
 const HeroBanner: FC = () => {
   return (
     <div className="flex w-full justify-center bg-black-lt">
-      <div className="relative w-[375px] h-[510px] overflow-hidden md:w-192 md:h-[639px] lg:w-360 lg:h-158">
+      <div className="relative w-[375px] h-[510px] overflow-hidden md:w-192 md:h-[639px] xl:w-360 xl:h-158">
         {imageConfig.map((config) => (
           <Image
             key={config.category}

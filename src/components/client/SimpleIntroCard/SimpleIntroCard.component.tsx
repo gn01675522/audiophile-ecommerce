@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
 import zx7SpeakerDesktop from "@/assets/intro-card/desktop/image-speaker-zx7.jpg";
@@ -9,19 +11,24 @@ import { ButtonVariant } from "../Button/button.types";
 
 import { texts } from "@/shared/texts";
 
-import { simpleIntroCardWrapperClassesCombined } from "./SimpleIntroCard.styles";
+import { simpleIntroCardWrapperClasses } from "./SimpleIntroCard.styles";
 
 const imageByRWD = [
-  { src: zx7SpeakerDesktop, class: "hidden md:hidden lg:block" },
-  { src: zx7SpeakerTablet, class: "hidden md:block lg:hidden" },
-  { src: zx7SpeakerMobile, class: "block md:hidden lg:hidden" },
+  { src: zx7SpeakerDesktop, class: "hidden md:hidden xl:block" },
+  { src: zx7SpeakerTablet, class: "hidden md:block xl:hidden" },
+  { src: zx7SpeakerMobile, class: "block md:hidden xl:hidden" },
 ];
 
 const SimpleIntroCard = () => {
-  const cardTitle = `${texts.product.zx7.name.toUpperCase()} ${texts.product.zx7.category.toUpperCase()}`;
+  const router = useRouter();
+  const cardTitle = `${texts.product.zx7.name} ${texts.product.zx7.category}`;
+
+  const onClickToNavigation = () => {
+    router.push("/product/zx7");
+  };
 
   return (
-    <div className={twMerge(simpleIntroCardWrapperClassesCombined)}>
+    <div className={twMerge(simpleIntroCardWrapperClasses)}>
       {imageByRWD.map((image, i) => (
         <Image
           key={i}
@@ -33,8 +40,11 @@ const SimpleIntroCard = () => {
         />
       ))}
       <div className="flex flex-col gap-8">
-        <h2 className="text-xl tracking-[2px]">{cardTitle}</h2>
-        <Button variant={ButtonVariant.transparent}>
+        <h2 className="text-xl tracking-[2px] uppercase">{cardTitle}</h2>
+        <Button
+          variant={ButtonVariant.transparent}
+          onClick={onClickToNavigation}
+        >
           {texts.common.seeProduct.toUpperCase()}
         </Button>
       </div>

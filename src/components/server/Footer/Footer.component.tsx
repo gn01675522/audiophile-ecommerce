@@ -6,6 +6,8 @@ import InstagramSVG from "../InstagramSVG/InstagramSVG.component";
 import FacebookSVG from "../FacebookSVG/FacebookSVG.component";
 import TwitterSVG from "../TwitterSVG/TwitterSVG.component";
 
+import { texts } from "@/shared/texts";
+
 import type { FC } from "react";
 
 const footerBaseClass =
@@ -14,7 +16,7 @@ const footerBaseClass =
 const footerTabletClass =
   "md:items-start md:pt-15 md:pb-11.5 md:pl-[39px] md:pr-10";
 
-const footerDesktopClass = "lg:pt-[75px] lg:pb-12 lg:px-[165px]";
+const footerDesktopClass = "xl:pt-[75px] xl:pb-12 xl:px-[165px]";
 
 const combinedClass = twMerge(
   footerBaseClass,
@@ -26,20 +28,17 @@ const Footer: FC = () => {
   return (
     <div className={combinedClass}>
       <div className="absolute w-[101px] h-1 bg-primary top-0" />
-      <div className="flex flex-col gap-12 lg:flex-row lg:w-full lg:justify-between">
+      <div className="flex flex-col gap-12 xl:flex-row xl:w-full xl:justify-between">
         <Logo />
         <LinkList className="md:px-0" />
       </div>
-      <p className="text-center opacity-50 md:text-start lg:w-135 lg:h-25">
-        Audiophile is an all in one stop to fulfill your audio needs. We&apos;re
-        a small team of music lovers and sound specialists who are devoted to
-        helping you get the most out of personal audio. Come and visit our demo
-        facility - we’re open 7 days a week.
+      <p className="text-center opacity-50 md:text-start xl:w-135 xl:h-25">
+        {texts.home.footer.paragraphs}
       </p>
       <span className="font-bold opacity-50">
-        Copyright 2021. All Rights Reserved
+        {texts.home.footer.copyRight}
       </span>
-      <div className="flex gap-4 md:absolute md:right-10 md:bottom-[49px] lg:right-[165px] lg:bottom-34 ">
+      <div className="flex gap-4 md:absolute md:right-10 md:bottom-[49px] xl:right-[165px] xl:bottom-34 ">
         <FacebookSVG />
         <TwitterSVG />
         <InstagramSVG />

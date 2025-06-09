@@ -15,7 +15,6 @@ export const texts = {
       name: "zx9",
       intro:
         "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
-      paragraph: "",
     },
     zx7: {
       category: "speaker",
@@ -31,6 +30,16 @@ export const texts = {
       title: "XX99 Mark II Headphones",
       paragraphs:
         "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+    },
+    about: {
+      title: "Bringing you the best audio gear",
+      paragraphs:
+        "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.",
+    },
+    footer: {
+      paragraphs:
+        "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.",
+      copyRight: "Copyright 2021. All Rights Reserved",
     },
   },
 };

@@ -11,7 +11,7 @@ const ulBaseClass =
 
 const ulMobileClass = "w-full flex-col gap-4 items-center";
 const ulTabletClass = "md:flex-row md:justify-between md:gap-[34px]";
-const ulDesktopClass = " lg:w-min";
+const ulDesktopClass = " xl:w-min";
 
 const allClasses = twMerge(
   ulBaseClass,
