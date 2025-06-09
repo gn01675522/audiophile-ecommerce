@@ -18,9 +18,9 @@ const ImageCard: FC<PropsType> = ({ src, sizes, alt, className }) => {
   );
 
   return (
-    <div className={wrapperClasses}>
+    <picture className={wrapperClasses}>
       <Image src={src} alt={alt} sizes={sizes} fill />
-    </div>
+    </picture>
   );
 };
 

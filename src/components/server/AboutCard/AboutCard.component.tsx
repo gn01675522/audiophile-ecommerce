@@ -53,7 +53,7 @@ const titleSplit = texts.home.about.title
 const AboutCard: FC = () => {
   return (
     <div className={aboutCardWrapperClasses}>
-      <div className={aboutCardImageWrapperClasses}>
+      <picture className={aboutCardImageWrapperClasses}>
         {aboutImageByRWD.map((image, i) => (
           <Image
             key={i}
@@ -64,7 +64,7 @@ const AboutCard: FC = () => {
             className={twMerge(image.class, "rounded-[8px]")}
           />
         ))}
-      </div>
+      </picture>
       <article className={aboutCardArticleClasses}>
         <div className={aboutCardArticleWrapperClasses}>
           <h2 className={aboutCardTitleClasses}>{titleSplit}</h2>

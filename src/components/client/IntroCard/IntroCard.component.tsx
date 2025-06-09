@@ -40,7 +40,7 @@ const IntroCard: FC = () => {
     <div className={introCardWrapperClasses}>
       <CircleSVG className={introCardCircleSVGClasses} />
       {imageByRWD.map((image, i) => (
-        <div
+        <picture
           key={i}
           className={twMerge(introCardImageWrapperClasses, image.class)}
         >
@@ -50,7 +50,7 @@ const IntroCard: FC = () => {
             fill
             sizes="(max-width: 767px) 172.25px, (max-width: 1439px) 197px, 410.23px"
           />
-        </div>
+        </picture>
       ))}
       <div className={introCardCTABlockClasses}>
         <h2 className={introCardTitleClasses}>

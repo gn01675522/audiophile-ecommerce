@@ -24,7 +24,7 @@ const yx1ImageByRWD = [
 const SplitCard: FC = () => {
   return (
     <div className={splitCardWrapperClasses}>
-      <div className="w-full min-w-[264.5px] max-w-[540px]">
+      <picture className="w-full min-w-[264.5px] max-w-[540px]">
         {yx1ImageByRWD.map((image, i) => (
           <ImageCard
             key={i}
@@ -34,7 +34,7 @@ const SplitCard: FC = () => {
             className={image.class}
           />
         ))}
-      </div>
+      </picture>
       <BasicIntroCard className="w-full min-w-[264.5px] max-w-[540px]" />
     </div>
   );

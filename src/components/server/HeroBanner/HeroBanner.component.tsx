@@ -32,7 +32,7 @@ const imageConfig = [
 const HeroBanner: FC = () => {
   return (
     <div className="flex w-full justify-center bg-black-lt">
-      <div className={heroBannerImageWrapper}>
+      <picture className={heroBannerImageWrapper}>
         {imageConfig.map((config) => (
           <Image
             key={config.category}
@@ -47,7 +47,7 @@ const HeroBanner: FC = () => {
           />
         ))}
         <CTABlock />
-      </div>
+      </picture>
     </div>
   );
 };

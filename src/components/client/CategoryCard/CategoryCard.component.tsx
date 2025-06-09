@@ -56,14 +56,14 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
   return (
     <Link href={link} className={categoryCardWrapperClasses}>
       <div className={categoryCardContentWrapperClasses}>
-        <div className="absolute top-0 left-1/2 w-max h-max -translate-y-2/6 -translate-x-1/2">
+        <picture className="absolute top-0 left-1/2 w-max h-max -translate-y-2/6 -translate-x-1/2">
           <Image
             src={imgSelector.src}
             alt={imgSelector.alt}
             width={imgSelector.size.width}
             height={imgSelector.size.height}
           />
-        </div>
+        </picture>
         <span className="font-bold leading-[20px]">{category}</span>
         <Button
           variant={ButtonVariant.ghost}
