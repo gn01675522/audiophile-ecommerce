@@ -7,6 +7,8 @@ import desktopBannerImage from "@/assets/banner/image-hero-desktop.jpg";
 import tabletBannerImage from "@/assets/banner/image-hero-tablet.jpg";
 import mobileBannerImage from "@/assets/banner/image-hero-mobile.jpg";
 
+import { heroBannerImageWrapper } from "./HeroBanner.styles";
+
 import type { FC } from "react";
 
 const imageConfig = [
@@ -30,7 +32,7 @@ const imageConfig = [
 const HeroBanner: FC = () => {
   return (
     <div className="flex w-full justify-center bg-black-lt">
-      <div className="relative w-[375px] h-[510px] overflow-hidden md:w-192 md:h-[639px] xl:w-360 xl:h-158">
+      <div className={heroBannerImageWrapper}>
         {imageConfig.map((config) => (
           <Image
             key={config.category}

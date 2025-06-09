@@ -13,6 +13,11 @@ import earphonesImg from "@/assets/category-card/image-category-earphones.png";
 
 import { texts } from "@/shared/texts";
 
+import {
+  categoryCardWrapperClasses,
+  categoryCardContentWrapperClasses,
+} from "./CategoryCard.styles";
+
 import { CATEGORY_CLASSES } from "@/shared/shared.types";
 
 import type { FC } from "react";
@@ -49,11 +54,8 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
   };
 
   return (
-    <Link
-      href={link}
-      className="flex w-[327px] h-[217px] items-end md:w-[223px] xl:w-[350px] xl:h-[284px]"
-    >
-      <div className="relative flex flex-col w-full h-[165px] gap-[17px] items-center pt-22 pb-5.5 bg-ghost rounded-lg xl:h-51 xl:pb-6 xl:pt-29">
+    <Link href={link} className={categoryCardWrapperClasses}>
+      <div className={categoryCardContentWrapperClasses}>
         <div className="absolute top-0 left-1/2 w-max h-max -translate-y-2/6 -translate-x-1/2">
           <Image
             src={imgSelector.src}

@@ -3,18 +3,12 @@ import { useState, forwardRef } from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { inputClassByBehavior } from "./Input.styles";
+
 import type { Ref, FocusEvent } from "react";
 import type { IInput } from "./input.types";
 
 const labelSetting = "font-bold";
-
-const inputBaseSetting =
-  "w-[309px] h-14 px-6 border border-gray-lt rounded-lg font-bold focus:border-none";
-const inputPlaceholderSetting = "placeholder:text-black placeholder:opacity-40";
-const inputFocusSetting =
-  "focus:outline focus:outline-primary focus:caret-primary";
-const inputWarningSetting =
-  "focus:outline-2 focus:outline-error focus:caret-error";
 
 const Input = forwardRef<HTMLInputElement, IInput>(
   (
@@ -42,10 +36,7 @@ const Input = forwardRef<HTMLInputElement, IInput>(
     );
 
     const combinedInputClass = clsx(
-      inputBaseSetting,
-      inputPlaceholderSetting,
-      inputFocusSetting,
-      !isValid && touchedByWhich && inputWarningSetting,
+      inputClassByBehavior(isValid, touchedByWhich),
       inputClassName && inputClassName
     );
 

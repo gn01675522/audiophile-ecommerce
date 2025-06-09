@@ -1,7 +1,7 @@
-import { mergeClassesHelper } from "@/shared/utilities";
+import { mergeRWDClassesHelper } from "@/shared/utilities";
 import { RWD_VARIANTS } from "@/shared/shared.types";
 
-export const simpleIntroCardWrapperClasses = mergeClassesHelper({
+export const simpleIntroCardWrapperClasses = mergeRWDClassesHelper({
   [RWD_VARIANTS.base]:
     "flex relative w-full min-w-[327px] max-w-[1110px] items-center h-80 rounded-[8px] overflow-hidden",
   [RWD_VARIANTS.mobile]: "p-6",
