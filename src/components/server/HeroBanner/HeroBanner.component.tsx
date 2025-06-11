@@ -12,16 +12,37 @@ import {
 
 import type { FC } from "react";
 
+const imgByRWD = {
+  mobile: {
+    src: mobileBannerImage,
+    width: 375,
+    height: 600,
+    sizes: "375px",
+  },
+  medium: {
+    src: tabletBannerImage,
+    width: 768,
+    height: 729,
+    sizes: "768px",
+  },
+  xlarge: {
+    src: desktopBannerImage,
+    width: 1440,
+    height: 729,
+    sizes: "1440px",
+  },
+};
+
 const HeroBanner: FC = () => {
   return (
     <div className={heroBannerWrapperClasses}>
       <div className={heroBannerContentWrapperClasses}>
         <RWDImage
           alt="Hero banner"
-          mobileImg={mobileBannerImage}
-          mediumImg={tabletBannerImage}
-          xlargeImg={desktopBannerImage}
-          className={heroBannerImageClasses}
+          mobileImg={imgByRWD.mobile}
+          mediumImg={imgByRWD.medium}
+          xlargeImg={imgByRWD.xlarge}
+          wrapperClass={heroBannerImageClasses}
         />
         <CTABlock />
       </div>

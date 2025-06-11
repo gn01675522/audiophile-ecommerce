@@ -1,87 +1,51 @@
 import { getImageProps } from "next/image";
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
+
+import { imagePropsPropertiesHelper } from "./RWDImage.helper";
 
 import type { FC } from "react";
-import type { StaticImageData } from "next/image";
-
-type PropsType = {
-  alt: string;
-  className?: string;
-  mobileImg: string | StaticImageData;
-  smallImg?: string | StaticImageData;
-  mediumImg?: string | StaticImageData;
-  largeImg?: string | StaticImageData;
-  xlargeImg?: string | StaticImageData;
-  priority?: boolean;
-};
+import type { PropsType } from "./RWDImage.types";
 
 const RWDImage: FC<PropsType> = ({
   alt,
-  className,
+  wrapperClass,
+  imgClass,
   mobileImg,
   smallImg,
   mediumImg,
   largeImg,
   xlargeImg,
 }) => {
-  const common = { alt, size: "100vw" };
+  const common = { alt, sizes: "100vw", quality: 80 };
   const {
     props: { srcSet: mobile, ...rest },
-  } = getImageProps({
-    ...common,
-    width: 375,
-    height: 600,
-    quality: 80,
-    src: mobileImg,
-  });
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: mobileImg }));
 
   const {
     props: { srcSet: small },
-  } = getImageProps({
-    ...common,
-    width: 588,
-    height: 510,
-    quality: 80,
-    src: smallImg ? smallImg : "",
-  });
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: smallImg }));
 
   const {
     props: { srcSet: medium },
-  } = getImageProps({
-    ...common,
-    width: 768,
-    height: 639,
-    quality: 80,
-    src: mediumImg ? mediumImg : "",
-  });
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: mediumImg }));
 
   const {
     props: { srcSet: large },
-  } = getImageProps({
-    ...common,
-    width: 1024,
-    height: 639,
-    quality: 80,
-    src: largeImg ? largeImg : "",
-  });
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: largeImg }));
 
   const {
     props: { srcSet: xlarge },
-  } = getImageProps({
-    ...common,
-    width: 1440,
-    height: 632,
-    quality: 80,
-    src: xlargeImg ? xlargeImg : "",
-  });
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: xlargeImg }));
 
   return (
-    <picture>
-      {xlargeImg && <source srcSet={xlarge} media="(min-width: 1439px)" />}
-      {largeImg && <source srcSet={large} media="(min-width: 1023px)" />}
-      {mediumImg && <source srcSet={medium} media="(min-width: 767px)" />}
-      {smallImg && <source srcSet={small} media="(min-width: 587px)" />}
+    <picture className={wrapperClass}>
+      {xlargeImg && <source media="(min-width: 1439px)" srcSet={xlarge} />}
+      {largeImg && <source media="(min-width: 1023px)" srcSet={large} />}
+      {mediumImg && <source media="(min-width: 767px)" srcSet={medium} />}
+      {smallImg && <source media="(min-width: 587px)" srcSet={small} />}
       <source media="(max-width: 588px)" srcSet={mobile} />
-      <img {...rest} className={className} />
+      <img {...rest} className={twMerge(clsx("w-full h-full", imgClass))} />
     </picture>
   );
 };

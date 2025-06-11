@@ -38,3 +38,10 @@ export const introCardTitleClasses = mergeRWDClassesHelper({
   [RWD_VARIANTS.medium]: "md:text-4xl md:leading-[58px]",
   [RWD_VARIANTS.xlarge]: "xl:text-start",
 });
+
+export const introCardParagraphClasses = mergeRWDClassesHelper({
+  [RWD_VARIANTS.base]: "text-white",
+  [RWD_VARIANTS.mobile]: "w-70 text-center",
+  [RWD_VARIANTS.medium]: "md:w-[349px]",
+  [RWD_VARIANTS.xlarge]: "xl:text-start",
+});
