@@ -1,6 +1,4 @@
-import Image from "next/image";
-import { twMerge } from "tailwind-merge";
-
+import RWDImage from "../RWDImage/RWDImage.component";
 import gearWithHumanDesktop from "@/assets/shared/desktop/image-best-gear.jpg";
 import gearWithHumanTablet from "@/assets/shared/tablet/image-best-gear.jpg";
 import gearWithHumanMobile from "@/assets/shared/mobile/image-best-gear.jpg";
@@ -18,17 +16,26 @@ import {
 
 import type { FC, ReactNode } from "react";
 
-const aboutImageByRWD = [
-  { src: gearWithHumanDesktop, class: "hidden md:hidden xl:block" },
-  {
-    src: gearWithHumanTablet,
-    class: "hidden md:block xl:hidden",
-  },
-  {
+const imgByRWD = {
+  mobile: {
     src: gearWithHumanMobile,
-    class: "block md:hidden xl:hidden",
+    width: 327,
+    height: 300,
+    sizes: "327px",
   },
-];
+  medium: {
+    src: gearWithHumanTablet,
+    width: 689,
+    height: 300,
+    sizes: "689px",
+  },
+  xlarge: {
+    src: gearWithHumanDesktop,
+    width: 540,
+    height: 588,
+    sizes: "540px",
+  },
+};
 
 const titleSplit = texts.home.about.title
   .split(" ")
@@ -53,18 +60,14 @@ const titleSplit = texts.home.about.title
 const AboutCard: FC = () => {
   return (
     <div className={aboutCardWrapperClasses}>
-      <picture className={aboutCardImageWrapperClasses}>
-        {aboutImageByRWD.map((image, i) => (
-          <Image
-            key={i}
-            src={image.src}
-            alt="Man listening to music with headphones."
-            fill
-            sizes="(max-width: 767px) 327px, (max-width: 1439px) 689px, 540px"
-            className={twMerge(image.class, "rounded-[8px]")}
-          />
-        ))}
-      </picture>
+      <RWDImage
+        alt="Man listening to music with headphones."
+        mobileImg={imgByRWD.mobile}
+        mediumImg={imgByRWD.medium}
+        xlargeImg={imgByRWD.xlarge}
+        wrapperClass={aboutCardImageWrapperClasses}
+        imgClass="rounded-[8px]"
+      />
       <article className={aboutCardArticleClasses}>
         <div className={aboutCardArticleWrapperClasses}>
           <h2 className={aboutCardTitleClasses}>{titleSplit}</h2>

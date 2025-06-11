@@ -1,4 +1,4 @@
-import ImageCard from "../ImageCard/ImageCard.component";
+import RWDImage from "../RWDImage/RWDImage.component";
 import BasicIntroCard from "@/components/client/BasicIntroCard/BasicIntroCard.component";
 
 import yx1EarphonesDesktop from "@/assets/intro-card/desktop/image-earphones-yx1.jpg";
@@ -9,32 +9,37 @@ import { splitCardWrapperClasses } from "./SplitCard.styles";
 
 import type { FC } from "react";
 
-const yx1ImageByRWD = [
-  { src: yx1EarphonesDesktop, class: "h-80 hidden md:hidden xl:block" },
-  {
-    src: yx1EarphonesTablet,
-    class: " h-80 hidden md:block xl:hidden",
-  },
-  {
+const imgByRWD = {
+  mobile: {
     src: yx1EarphonesMobile,
-    class: "h-50 block md:hidden xl:hidden",
+    width: 327,
+    height: 200,
+    sizes: "327px",
   },
-];
+  medium: {
+    src: yx1EarphonesTablet,
+    width: 339,
+    height: 320,
+    sizes: "339px",
+  },
+  xlarge: {
+    src: yx1EarphonesDesktop,
+    width: 540,
+    height: 320,
+    sizes: "540px",
+  },
+};
 
 const SplitCard: FC = () => {
   return (
     <div className={splitCardWrapperClasses}>
-      <picture className="w-full min-w-[264.5px] max-w-[540px]">
-        {yx1ImageByRWD.map((image, i) => (
-          <ImageCard
-            key={i}
-            src={image.src}
-            alt="YX1 earphones"
-            sizes="(max-width: 767px) 327px, (max-width: 1439px) 339px, 540px"
-            className={image.class}
-          />
-        ))}
-      </picture>
+      <RWDImage
+        alt="YX1 earphones"
+        mobileImg={imgByRWD.mobile}
+        mediumImg={imgByRWD.medium}
+        xlargeImg={imgByRWD.xlarge}
+        wrapperClass="w-full min-w-[264.5px] max-w-[540px] h-50 rounded-[8px] overflow-hidden md:h-80"
+      />
       <BasicIntroCard className="w-full min-w-[264.5px] max-w-[540px]" />
     </div>
   );

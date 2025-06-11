@@ -63,9 +63,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
             </section>
           </section>
         </main>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </body>
     </html>
   );

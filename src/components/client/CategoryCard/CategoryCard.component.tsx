@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
 import Button from "../../client/Button/Button.component";
 import { ButtonVariant } from "../../client/Button/button.types";
 import headPhonesImg from "@/assets/category-card/image-category-headphones.png";
