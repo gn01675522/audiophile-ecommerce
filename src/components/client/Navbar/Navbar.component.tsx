@@ -1,9 +1,14 @@
 "use client";
 import Logo from "@/components/server/Logo/Logo.component";
 import Cart from "../../Cart/Cart.component";
+import CategoryCard from "../CategoryCard/CategoryCard.component";
+import Backdrop from "@/components/server/Backdrop/Backdrop.component";
 import LinkList from "@/components/server/LinkLIst/LinkList.component";
 
 import { useDropdown } from "./navbar.hooks";
+
+import { linksSetting } from "@/shared/linksSetting";
+
 import {
   navbarWrapperClasses,
   navbarTriggerClasses,
@@ -34,9 +39,24 @@ const Navbar: FC = () => {
         ))}
       </label>
       <Logo className={navbarLogoClasses} />
-      <div className={navbarListWrapperClasses}>
-        <LinkList className={`${isOpen ? "flex" : "hidden"} md:px-6 xl:flex`} />
-      </div>
+
+      {isOpen && (
+        <div>
+          <Backdrop className="absolute top-[90px] left-0" />
+          <ul className={navbarListWrapperClasses}>
+            {linksSetting.map((link) => (
+              <li key={link.category} className="w-full h-max list-none">
+                <CategoryCard
+                  key={link.category}
+                  link={link.url}
+                  category={link.category}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <LinkList className={`${isOpen ? "flex" : "hidden"} md:px-6 xl:flex`} />
 
       <Cart />
     </nav>

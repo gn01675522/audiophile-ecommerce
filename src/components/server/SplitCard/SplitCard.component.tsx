@@ -38,9 +38,9 @@ const SplitCard: FC = () => {
         mobileImg={imgByRWD.mobile}
         mediumImg={imgByRWD.medium}
         xlargeImg={imgByRWD.xlarge}
-        wrapperClass="w-full min-w-[264.5px] max-w-[540px] h-50 rounded-[8px] overflow-hidden md:h-80"
+        wrapperClass="w-full min-w-[250.5px] max-w-[540px] h-50 rounded-[8px] overflow-hidden md:h-80"
       />
-      <BasicIntroCard className="w-full min-w-[264.5px] max-w-[540px]" />
+      <BasicIntroCard className="w-full min-w-[250.5px] max-w-[540px]" />
     </div>
   );
 };

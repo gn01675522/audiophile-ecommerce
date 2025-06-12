@@ -2,10 +2,9 @@ import { mergeRWDClassesHelper } from "@/shared/utilities";
 import { RWD_VARIANTS } from "@/shared/shared.types";
 
 export const categoryCardWrapperClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "flex items-end ",
-  [RWD_VARIANTS.mobile]: "w-[327px] h-[217px]",
-  [RWD_VARIANTS.medium]: "md:w-[223px]",
-  [RWD_VARIANTS.xlarge]: "xl:w-[350px] xl:h-[284px]",
+  [RWD_VARIANTS.base]: "flex w-full items-end",
+  [RWD_VARIANTS.mobile]: "h-[217px]",
+  [RWD_VARIANTS.xlarge]: "xl:h-[284px]",
 });
 
 export const categoryCardContentWrapperClasses = mergeRWDClassesHelper({

@@ -13,7 +13,7 @@ import {
   layoutSectionWrapperClasses,
   layoutFirstSectionClasses,
   layoutSecondSectionClasses,
-} from "@/layout.styles";
+} from "@/app/layout.styles";
 
 import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";
@@ -45,9 +45,9 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           {children}
           <section className={layoutSectionWrapperClasses}>
             <section className={layoutFirstSectionClasses}>
-              {linksSetting.map((link, i) => (
+              {linksSetting.map((link) => (
                 <CategoryCard
-                  key={i}
+                  key={link.category}
                   link={link.url}
                   category={link.category}
                 />

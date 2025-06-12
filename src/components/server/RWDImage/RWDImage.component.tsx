@@ -43,7 +43,7 @@ const RWDImage: FC<PropsType> = ({
       {xlargeImg && <source media="(min-width: 1439px)" srcSet={xlarge} />}
       {largeImg && <source media="(min-width: 1023px)" srcSet={large} />}
       {mediumImg && <source media="(min-width: 767px)" srcSet={medium} />}
-      {smallImg && <source media="(min-width: 587px)" srcSet={small} />}
+      {smallImg && <source media="(min-width: 559px)" srcSet={small} />}
       <source media="(max-width: 588px)" srcSet={mobile} />
       <img {...rest} className={twMerge(clsx("w-full h-full", imgClass))} />
     </picture>
