@@ -26,3 +26,10 @@ export const navbarListWrapperClasses = mergeRWDClassesHelper({
     "sm:flex-row sm:pt-[56px] sm:pr-[39px] sm:pb-[67px] sm:pl-[40px] sm:gap-[10px]",
   [RWD_VARIANTS.xlarge]: "xl:hidden",
 });
+
+export const navbarListForDesktopClasses = mergeRWDClassesHelper({
+  [RWD_VARIANTS.base]:
+    "w-min h-max bg-black-lt text-subtitle text-white tracking-[2px] font-bold text-xs",
+  [RWD_VARIANTS.mobile]: "hidden",
+  [RWD_VARIANTS.xlarge]: "xl:flex xl:flex-row xl:gap-[34px] xl:gap-[34px]",
+});

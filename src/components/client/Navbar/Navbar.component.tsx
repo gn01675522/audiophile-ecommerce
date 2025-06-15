@@ -1,9 +1,10 @@
 "use client";
+import Link from "next/link";
+
 import Logo from "@/components/server/Logo/Logo.component";
 import Cart from "../../Cart/Cart.component";
 import CategoryCard from "../CategoryCard/CategoryCard.component";
 import Backdrop from "@/components/server/Backdrop/Backdrop.component";
-import LinkList from "@/components/server/LinkLIst/LinkList.component";
 
 import { useDropdown } from "./navbar.hooks";
 
@@ -14,9 +15,12 @@ import {
   navbarTriggerClasses,
   navbarLogoClasses,
   navbarListWrapperClasses,
+  navbarListForDesktopClasses,
 } from "./Navbar.styles";
 
 import type { FC } from "react";
+
+const navLinksForDesktop = [{ url: "/", category: "HOME" }, ...linksSetting];
 
 const Navbar: FC = () => {
   const { isOpen, setIsOpen, ref } = useDropdown();
@@ -56,7 +60,15 @@ const Navbar: FC = () => {
           </ul>
         </div>
       )}
-      <LinkList className={`${isOpen ? "flex" : "hidden"} md:px-6 xl:flex`} />
+      <ul className={navbarListForDesktopClasses}>
+        {navLinksForDesktop.map((item, i) => (
+          <li key={i} className="w-full md:w-min">
+            <Link href={item.url} className="block w-full hover:text-primary">
+              {item.category}
+            </Link>
+          </li>
+        ))}
+      </ul>
 
       <Cart />
     </nav>

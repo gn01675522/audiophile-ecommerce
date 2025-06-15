@@ -1,5 +1,5 @@
 import Logo from "../Logo/Logo.component";
-import LinkList from "../LinkLIst/LinkList.component";
+import LinkList from "../LinkList/LinkList.component";
 import InstagramSVG from "../InstagramSVG/InstagramSVG.component";
 import FacebookSVG from "../FacebookSVG/FacebookSVG.component";
 import TwitterSVG from "../TwitterSVG/TwitterSVG.component";
