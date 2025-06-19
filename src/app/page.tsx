@@ -2,14 +2,12 @@ import HeroBanner from "@/components/server/HeroBanner/HeroBanner.component";
 
 import type { FC } from "react";
 
-const Home: FC = () => {
+const HomePage: FC = () => {
   return (
-    <div>
-      <section>
-        <HeroBanner />
-      </section>
-    </div>
+    <section>
+      <HeroBanner />
+    </section>
   );
 };
 
-export default Home;
+export default HomePage;

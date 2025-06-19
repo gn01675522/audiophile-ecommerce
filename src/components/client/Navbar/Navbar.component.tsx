@@ -64,7 +64,7 @@ const Navbar: FC = () => {
         {navLinksForDesktop.map((item, i) => (
           <li key={i} className="w-full md:w-min">
             <Link href={item.url} className="block w-full hover:text-primary">
-              {item.category}
+              {item.category.toUpperCase()}
             </Link>
           </li>
         ))}

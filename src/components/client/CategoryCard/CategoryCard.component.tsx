@@ -17,22 +17,23 @@ import {
   categoryCardContentWrapperClasses,
 } from "./CategoryCard.styles";
 
-import { CATEGORY_CLASSES } from "@/shared/shared.types";
+import { PRODUCT_CATEGORY } from "@/shared/shared.types";
+import type { PRODUCT_CATEGORY_CLASSES } from "@/shared/shared.types";
 
 import type { FC } from "react";
 
 const imageByCategory = {
-  [CATEGORY_CLASSES.HEADPHONES]: {
+  [PRODUCT_CATEGORY.headphones]: {
     src: headPhonesImg,
     alt: "headphones image",
     size: { width: 178, height: 160 },
   },
-  [CATEGORY_CLASSES.SPEAKERS]: {
+  [PRODUCT_CATEGORY.speakers]: {
     src: speakersImg,
     alt: "speakers image",
     size: { width: 178, height: 160 },
   },
-  [CATEGORY_CLASSES.EARPHONES]: {
+  [PRODUCT_CATEGORY.earphones]: {
     src: earphonesImg,
     alt: "earphones image",
     size: { width: 185, height: 185 },
@@ -41,7 +42,7 @@ const imageByCategory = {
 
 type CategoryCard = {
   link: string;
-  category: CATEGORY_CLASSES;
+  category: PRODUCT_CATEGORY_CLASSES;
 };
 
 const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
@@ -63,7 +64,9 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
             height={imgSelector.size.height}
           />
         </picture>
-        <span className="font-bold leading-[20px]">{category}</span>
+        <span className="font-bold leading-[20px]">
+          {category.toUpperCase()}
+        </span>
         <Button
           variant={ButtonVariant.ghost}
           endIcon={<ArrowForwardIosIcon style={{ fontSize: "12px" }} />}

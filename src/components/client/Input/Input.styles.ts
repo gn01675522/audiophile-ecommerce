@@ -1,4 +1,4 @@
-import { mergeSegmentClassesHelper } from "@/shared/utilities";
+import { mergeSegmentClassesHelper } from "@/lib/utils/mergeClasses.utils";
 import { CLASS_SEGMENT } from "@/shared/shared.types";
 
 const inputBaseSetting = mergeSegmentClassesHelper({
