@@ -10,7 +10,7 @@ import headPhonesImg from "@/assets/category-card/image-category-headphones.png"
 import speakersImg from "@/assets/category-card/image-category-speakers.png";
 import earphonesImg from "@/assets/category-card/image-category-earphones.png";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import {
   categoryCardWrapperClasses,

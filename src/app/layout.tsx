@@ -8,7 +8,7 @@ import SimpleIntroCard from "@/components/client/SimpleIntroCard/SimpleIntroCard
 import AboutCard from "@/components/server/AboutCard/AboutCard.component";
 import SplitCard from "@/components/server/SplitCard/SplitCard.component";
 
-import { linksSetting } from "@/shared/linksSetting";
+import { linksSetting } from "@/shared/shared.setting";
 import {
   layoutSectionWrapperClasses,
   layoutFirstSectionClasses,

@@ -8,7 +8,7 @@ import clsx from "clsx";
 
 import { basicIntroCardWrapperClasses } from "./BasicIntroCard.styles";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import type { FC } from "react";
 

@@ -8,7 +8,7 @@ import zx7SpeakerMobile from "@/assets/intro-card/mobile/image-speaker-zx7.jpg";
 import Button from "../Button/Button.component";
 import { ButtonVariant } from "../Button/button.types";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import {
   simpleIntroCardWrapperClasses,

@@ -11,7 +11,7 @@ import {
   footerSocialSectionClasses,
 } from "./Footer.styles";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import type { FC } from "react";
 

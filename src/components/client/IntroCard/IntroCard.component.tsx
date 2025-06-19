@@ -19,7 +19,7 @@ import {
   introCardParagraphClasses,
 } from "./IntroCard.styles";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import type { FC } from "react";
 

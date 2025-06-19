@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 import { linkListWrapperClasses } from "./LinkList.styles";
 
-import { linksSetting } from "@/shared/linksSetting";
+import { linksSetting } from "@/shared/shared.setting";
 
 import type { FC } from "react";
 

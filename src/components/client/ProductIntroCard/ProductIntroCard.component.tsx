@@ -15,7 +15,7 @@ import {
   productIntroCardDescriptionClasses,
 } from "./ProductIntroCard.styles";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import type { FC } from "react";
 import type { ImgProperties } from "@/components/server/RWDImage/RWDImage.types";

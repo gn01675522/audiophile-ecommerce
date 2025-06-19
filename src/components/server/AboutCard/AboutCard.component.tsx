@@ -3,7 +3,7 @@ import gearWithHumanDesktop from "@/assets/shared/desktop/image-best-gear.jpg";
 import gearWithHumanTablet from "@/assets/shared/tablet/image-best-gear.jpg";
 import gearWithHumanMobile from "@/assets/shared/mobile/image-best-gear.jpg";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import {
   aboutCardWrapperClasses,

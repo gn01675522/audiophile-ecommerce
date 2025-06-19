@@ -8,7 +8,7 @@ import Backdrop from "@/components/server/Backdrop/Backdrop.component";
 
 import { useDropdown } from "./navbar.hooks";
 
-import { linksSetting } from "@/shared/linksSetting";
+import { linksSetting } from "@/shared/shared.setting";
 
 import {
   navbarWrapperClasses,

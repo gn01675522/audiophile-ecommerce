@@ -9,7 +9,7 @@ import {
   ctaBlockTitleClasses,
 } from "./CTABlock.styles";
 
-import { texts } from "@/shared/texts";
+import { texts } from "@/shared/shared.texts";
 
 import type { FC } from "react";
 
