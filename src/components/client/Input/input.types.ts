@@ -1,4 +1,8 @@
-import type { InputHTMLAttributes } from "react";
+import type {
+  RefObject,
+  InputHTMLAttributes,
+  // ComponentPropsWithoutRef,
+} from "react";
 
 export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   title: string;
@@ -10,4 +14,5 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   pattern?: string;
   labelClassName?: string;
   inputClassName?: string;
+  ref: RefObject<HTMLInputElement>;
 }

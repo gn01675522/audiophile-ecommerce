@@ -1,10 +1,9 @@
 import { HTTP_METHODS } from "next/dist/server/web/http";
 
-import ProductIntroCard from "@/components/client/ProductIntroCard/ProductIntroCard.component";
+import ProductCard from "./features/ProductCard/ProductCard.component";
 
 import { apiProductsByCategory } from "@/lib/apis/apis";
 import { fetcherHelper } from "@/lib/utils/fetcher.utils";
-import { transformCategoryImageHelper } from "./helper";
 
 import { productIntroPageWrapperClasses } from "./page.styles";
 
@@ -13,7 +12,7 @@ import type { ProductType } from "../api/products/productsRoute.type";
 import type { PRODUCT_CATEGORY_CLASSES } from "@/shared/shared.types";
 
 type PropsType = {
-  params: { category: PRODUCT_CATEGORY_CLASSES };
+  params: Promise<{ category: PRODUCT_CATEGORY_CLASSES }>;
 };
 
 const CategoryPage: FC<PropsType> = async ({ params }) => {
@@ -24,22 +23,14 @@ const CategoryPage: FC<PropsType> = async ({ params }) => {
     method: HTTP_METHODS[0],
   });
 
-  const productsData = transformCategoryImageHelper(res.result);
+  const productsData = res.result;
 
   return (
     <section className={productIntroPageWrapperClasses}>
       {productsData.map((data, i) => (
-        <ProductIntroCard
+        <ProductCard
           key={data.id}
-          alt={`${data.name} product picture.`}
-          name={data.name}
-          description={data.description}
-          isNew={data.new}
-          imgProps={{
-            mobile: data.categoryImage.mobile,
-            tablet: data.categoryImage.tablet,
-            desktop: data.categoryImage.desktop,
-          }}
+          productInfo={data}
           wrapperClass={(i + 1) % 2 === 0 ? "xl:flex-row-reverse" : ""}
         />
       ))}

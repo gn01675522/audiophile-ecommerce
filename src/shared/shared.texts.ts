@@ -3,6 +3,7 @@ export const texts = {
     shop: "shop",
     seeProduct: "see product",
     newProduct: "new product",
+    addToCart: "add to cart",
   },
   category: {
     headPhones: "headphones",

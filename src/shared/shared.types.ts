@@ -26,6 +26,12 @@ export const CLASS_SEGMENT = {
 };
 export type CLASS_SEGMENT_CLASSES = keyof typeof CLASS_SEGMENT;
 
+export const BUTTON_ACTIONS = {
+  increase: "increase",
+  decrease: "decrease",
+};
+export type BUTTON_ACTIONS_CLASSES = keyof typeof BUTTON_ACTIONS;
+
 export type ResponseType<T> = {
   result: T;
   success: boolean;

@@ -4,36 +4,36 @@ import { productsDummyData } from "@/data/data.dummy";
 
 export const GET = async (
   req: Request,
-  { params }: { params: Promise<{ category: string }> }
+  { params }: { params: Promise<{ id: string }> }
 ) => {
-  const { category } = await params;
+  const { id } = await params;
 
   try {
-    const products = productsDummyData.filter(
-      (product) => product.category === category
+    const product = productsDummyData.find(
+      (product) => product.id === Number(id)
     );
 
-    if (!products) {
+    if (!product) {
       return NextResponse.json(
         {
-          result: [],
+          result: {},
           success: true,
           count: 0,
-          message: `Cannot find any products by ${category}`,
+          message: `Cannot find any product by ${id}`,
         },
         { status: 200 }
       );
     }
     return NextResponse.json(
       {
-        result: products,
+        result: product,
         success: true,
-        count: products?.length,
+        count: product ? 1 : 0,
       },
       { status: 200 }
     );
   } catch (e) {
-    console.log("Server Error - /products/[category]/GET：", e);
+    console.log("Server Error - /products/[category]/[id]/GET：", e);
 
     return NextResponse.json(
       { success: false, error: `Internal Server Error: ${e}` },

@@ -1,8 +1,7 @@
 import { getImageProps } from "next/image";
-import { twMerge } from "tailwind-merge";
-import clsx from "clsx";
 
 import { imagePropsPropertiesHelper } from "./RWDImage.helper";
+import { cn } from "@/lib/utils/cn.utils";
 
 import type { FC } from "react";
 import type { PropsType } from "./RWDImage.types";
@@ -45,7 +44,7 @@ const RWDImage: FC<PropsType> = ({
       {mediumImg && <source media="(min-width: 767px)" srcSet={medium} />}
       {smallImg && <source media="(min-width: 559px)" srcSet={small} />}
       <source media="(max-width: 588px)" srcSet={mobile} />
-      <img {...rest} className={twMerge(clsx("w-full h-full", imgClass))} />
+      <img {...rest} className={cn("w-full h-full", imgClass)} />
     </picture>
   );
 };
