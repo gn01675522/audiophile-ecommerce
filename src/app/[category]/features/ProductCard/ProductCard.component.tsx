@@ -6,7 +6,7 @@ import ProductCardAddToCartButton from "./ProductCardAddToCartButton.component";
 
 import { useCountQuantity } from "./ProductCard.hooks";
 
-import { transformCategoryImageHelper } from "./productCard.helper";
+import { getImageSettingHelper } from "./productCard.helper";
 
 import { texts } from "@/shared/shared.texts";
 import { cn } from "@/lib/utils/cn.utils";
@@ -25,9 +25,11 @@ import {
 import type { FC, ReactNode } from "react";
 import type { ProductType } from "@/app/api/products/productsRoute.type";
 
+export type VariantType = "preview" | "purchase";
+
 type PropsType = {
   productInfo: ProductType;
-  variant?: "preview" | "purchase";
+  variant?: VariantType;
   wrapperClass?: string;
   children?: ReactNode;
 };
@@ -41,31 +43,33 @@ const ProductCard: FC<PropsType> = ({
 }) => {
   const { quantity, changeQuantityHandler, resetQuantityHandler } =
     useCountQuantity();
-  const transformImage = transformCategoryImageHelper(productInfo);
+  const transformImage = getImageSettingHelper(productInfo, variant);
+
+  console.log(transformImage);
 
   return (
-    <article className={cn(productCardWrapperClasses, wrapperClass)}>
+    <article className={cn(productCardWrapperClasses(variant), wrapperClass)}>
       <figure className={productCardFigureClasses}>
         <RWDImage
           alt={`${productInfo.name} product picture.`}
           mobileImg={transformImage.mobile}
           mediumImg={transformImage.tablet}
           xlargeImg={transformImage.desktop}
-          wrapperClass={productCardImageWrapperClasses}
+          wrapperClass={productCardImageWrapperClasses(variant)}
           priority
         />
       </figure>
       <div className={productCardContentWrapperClasses(variant)}>
         {productInfo.new && (
           <p
-            className={productCardSubTitleClasses}
+            className={productCardSubTitleClasses(variant)}
             aria-label="This is a newly released product"
           >
             {texts.common.newProduct.toUpperCase()}
           </p>
         )}
-        <h2 className={productCardTitleClasses}>{productInfo.name}</h2>
-        <p className={productCardDescriptionClasses}>
+        <h2 className={productCardTitleClasses(variant)}>{productInfo.name}</h2>
+        <p className={productCardDescriptionClasses(variant)}>
           {productInfo.description}
         </p>
         {variant === "purchase" && (

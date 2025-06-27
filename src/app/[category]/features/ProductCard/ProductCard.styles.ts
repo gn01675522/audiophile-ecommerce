@@ -2,27 +2,40 @@ import { mergeRWDClassesHelper } from "@/lib/utils/mergeClasses.utils";
 
 import { RWD_VARIANTS } from "@/shared/shared.types";
 
-export const productCardWrapperClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "flex w-full min-w-[327px] max-w-[1110px] items-center",
-  [RWD_VARIANTS.mobile]: "flex-col gap-8",
-  [RWD_VARIANTS.medium]: "md:gap-13",
-  [RWD_VARIANTS.xlarge]: "xl:flex-row xl:gap-[125px]",
-});
+import type { VariantType } from "./ProductCard.component";
+
+export const productCardWrapperClasses = (variant: VariantType) =>
+  mergeRWDClassesHelper({
+    [RWD_VARIANTS.base]:
+      "flex w-full min-w-[327px] max-w-[1110px] items-center",
+    [RWD_VARIANTS.mobile]: "flex-col gap-8",
+    [RWD_VARIANTS.medium]: `${
+      variant === "preview" ? "md:gap-13" : "md:flex-row md:gap-[69px]"
+    }`,
+    [RWD_VARIANTS.xlarge]: `xl:flex-row ${
+      variant === "preview" ? "xl:gap-[125px]" : "xl:gap-[124.5px]"
+    }`,
+  });
 
 export const productCardFigureClasses = mergeRWDClassesHelper({
   [RWD_VARIANTS.base]:
-    "flex w-full h-min rounded-xl overflow-hidden bg-ghost justify-center",
+    "flex h-min rounded-xl overflow-hidden bg-ghost justify-center",
+  [RWD_VARIANTS.mobile]: "w-full",
+  [RWD_VARIANTS.xlarge]: "xl:w-135",
 });
 
-export const productCardImageWrapperClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.mobile]: "w-[327px] h-88",
-  [RWD_VARIANTS.medium]: "md:w-[689px]",
-  [RWD_VARIANTS.xlarge]: "xl:w-135 xl:h-140",
-});
+export const productCardImageWrapperClasses = (variant: VariantType) =>
+  mergeRWDClassesHelper({
+    [RWD_VARIANTS.mobile]: `w-[327px] ${
+      variant === "preview" ? "h-88" : "h-[327px]"
+    }`,
+    [RWD_VARIANTS.medium]: `${
+      variant === "preview" ? "md:w-[689px]" : "md:w-[281px] md:h-120"
+    }`,
+    [RWD_VARIANTS.xlarge]: "xl:w-135 xl:h-140",
+  });
 
-export const productCardContentWrapperClasses = (
-  variant: "preview" | "purchase"
-) =>
+export const productCardContentWrapperClasses = (variant: VariantType) =>
   mergeRWDClassesHelper({
     [RWD_VARIANTS.base]: `flex flex-col ${
       variant === "preview" ? "items-center" : "items-start"
@@ -32,22 +45,31 @@ export const productCardContentWrapperClasses = (
     [RWD_VARIANTS.xlarge]: "xl:w-[445px] xl:items-start",
   });
 
-export const productCardSubTitleClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "text-xs font-normal tracking-[10px] text-primary",
-  [RWD_VARIANTS.medium]: "md:mb-4",
-});
+export const productCardSubTitleClasses = (variant: VariantType) =>
+  mergeRWDClassesHelper({
+    [RWD_VARIANTS.base]: "text-xs font-normal tracking-[10px] text-primary",
+    [RWD_VARIANTS.medium]: `${
+      variant === "preview" ? "md:mb-4" : "md:text-[12px] md:mb-[17px]"
+    }`,
+    [RWD_VARIANTS.xlarge]: `${variant === "purchase" && "xl:text-sm"} xl:mb-4`,
+  });
 
-export const productCardTitleClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "text-xl tracking-[1px]",
-  [RWD_VARIANTS.medium]: "md:mb-8",
-});
+export const productCardTitleClasses = (variant: VariantType) =>
+  mergeRWDClassesHelper({
+    [RWD_VARIANTS.base]: "text-3xl tracking-[1px]",
+    [RWD_VARIANTS.medium]: `${variant === "purchase" && "text-xl"} md:mb-8`,
+    [RWD_VARIANTS.xlarge]: "text-3xl",
+  });
 
-export const productCardDescriptionClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "opacity-50",
-  [RWD_VARIANTS.medium]: "md:mb-6",
-  [RWD_VARIANTS.xlarge]: "xl:mb-10",
-});
+export const productCardDescriptionClasses = (variant: VariantType) =>
+  mergeRWDClassesHelper({
+    [RWD_VARIANTS.base]: "opacity-50",
+    [RWD_VARIANTS.medium]: `${variant === "preview" ? "md:mb-6" : "md:mb-8"}`,
+    [RWD_VARIANTS.xlarge]: `${variant === "preview" ? "xl:mb-10" : "xl:mb-8"}`,
+  });
 
 export const productCardPriceTagClasses = mergeRWDClassesHelper({
   [RWD_VARIANTS.base]: "text-md font-bold tracking-[1.29px]",
+  [RWD_VARIANTS.mobile]: "mb-[31px]",
+  [RWD_VARIANTS.xlarge]: "xl:mb-[47px]",
 });
