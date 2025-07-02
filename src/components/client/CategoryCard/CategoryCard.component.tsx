@@ -26,17 +26,14 @@ const imageByCategory = {
   [PRODUCT_CATEGORY.headphones]: {
     src: headPhonesImg,
     alt: "headphones image",
-    size: { width: 178, height: 160 },
   },
   [PRODUCT_CATEGORY.speakers]: {
     src: speakersImg,
     alt: "speakers image",
-    size: { width: 178, height: 160 },
   },
   [PRODUCT_CATEGORY.earphones]: {
     src: earphonesImg,
     alt: "earphones image",
-    size: { width: 185, height: 185 },
   },
 };
 
@@ -49,19 +46,17 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
   const router = useRouter();
   const imgSelector = imageByCategory[category];
 
-  const onClickToNavigate = () => {
-    router.push(link);
-  };
+  const onClickToNavigate = () => router.push(link);
 
   return (
     <Link href={link} className={categoryCardWrapperClasses}>
       <div className={categoryCardContentWrapperClasses}>
-        <picture className="absolute top-0 left-1/2 w-max h-max -translate-y-2/6 -translate-x-1/2">
+        <picture className="absolute w-[185px] h-40 top-0 left-1/2 -translate-y-2/6 -translate-x-1/2">
           <Image
             src={imgSelector.src}
             alt={imgSelector.alt}
-            width={imgSelector.size.width}
-            height={imgSelector.size.height}
+            fill
+            sizes="185px"
           />
         </picture>
         <span className="font-bold leading-[20px]">

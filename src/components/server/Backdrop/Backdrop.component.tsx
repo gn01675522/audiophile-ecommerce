@@ -1,5 +1,4 @@
-import { twMerge } from "tailwind-merge";
-import clsx from "clsx";
+import { cn } from "@/lib/utils/cn.utils";
 
 import type { FC, ReactNode } from "react";
 
@@ -9,9 +8,8 @@ type PropsType = {
 };
 
 const Backdrop: FC<PropsType> = ({ children, className }) => {
-  const combinedClasses = twMerge(
-    clsx("w-full h-screen bg-black opacity-40", className)
-  );
+  const combinedClasses = cn("w-full h-screen bg-black opacity-40", className);
+
   return <div className={combinedClasses}>{children}</div>;
 };
 
