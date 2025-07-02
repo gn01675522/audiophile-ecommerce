@@ -44,19 +44,19 @@ export const productsDummyData = [
     ],
     gallery: {
       first: {
-        mobile: "/products/product-yx1-earphones/mobile/image-gallery-1.jpg",
-        tablet: "/products/product-yx1-earphones/tablet/image-gallery-1.jpg",
-        desktop: "/products/product-yx1-earphones/desktop/image-gallery-1.jpg",
+        mobile: "/products/yx1Earphones/mobile/image-gallery-1.jpg",
+        tablet: "/products/yx1Earphones/tablet/image-gallery-1.jpg",
+        desktop: "/products/yx1Earphones/desktop/image-gallery-1.jpg",
       },
       second: {
-        mobile: "/products/product-yx1-earphones/mobile/image-gallery-2.jpg",
-        tablet: "/products/product-yx1-earphones/tablet/image-gallery-2.jpg",
-        desktop: "/products/product-yx1-earphones/desktop/image-gallery-2.jpg",
+        mobile: "/products/yx1Earphones/mobile/image-gallery-2.jpg",
+        tablet: "/products/yx1Earphones/tablet/image-gallery-2.jpg",
+        desktop: "/products/yx1Earphones/desktop/image-gallery-2.jpg",
       },
       third: {
-        mobile: "/products/product-yx1-earphones/mobile/image-gallery-3.jpg",
-        tablet: "/products/product-yx1-earphones/tablet/image-gallery-3.jpg",
-        desktop: "/products/product-yx1-earphones/desktop/image-gallery-3.jpg",
+        mobile: "/products/yx1Earphones/mobile/image-gallery-3.jpg",
+        tablet: "/products/yx1Earphones/tablet/image-gallery-3.jpg",
+        desktop: "/products/yx1Earphones/desktop/image-gallery-3.jpg",
       },
     },
     others: [
@@ -465,12 +465,9 @@ export const productsDummyData = [
     },
     category: "speakers",
     categoryImage: {
-      mobile:
-        "/products/zx9Speaker/mobile/image-category-page-preview.jpg",
-      tablet:
-        "/products/zx9Speaker/tablet/image-category-page-preview.jpg",
-      desktop:
-        "/products/zx9Speaker/desktop/image-category-page-preview.jpg",
+      mobile: "/products/zx9Speaker/mobile/image-category-page-preview.jpg",
+      tablet: "/products/zx9Speaker/tablet/image-category-page-preview.jpg",
+      desktop: "/products/zx9Speaker/desktop/image-category-page-preview.jpg",
     },
     new: true,
     price: 4500,

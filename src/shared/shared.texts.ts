@@ -4,6 +4,8 @@ export const texts = {
     seeProduct: "see product",
     newProduct: "new product",
     addToCart: "add to cart",
+    features: "features",
+    inTheBox: "in the box",
   },
   category: {
     headPhones: "headphones",

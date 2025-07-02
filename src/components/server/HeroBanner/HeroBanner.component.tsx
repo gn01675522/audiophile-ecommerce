@@ -39,9 +39,9 @@ const HeroBanner: FC = () => {
       <div className={heroBannerContentWrapperClasses}>
         <RWDImage
           alt="Hero banner"
-          mobileImg={imgByRWD.mobile}
-          mediumImg={imgByRWD.medium}
-          xlargeImg={imgByRWD.xlarge}
+          mobile={imgByRWD.mobile}
+          medium={imgByRWD.medium}
+          xlarge={imgByRWD.xlarge}
           wrapperClass={heroBannerImageClasses}
         />
         <CTABlock />

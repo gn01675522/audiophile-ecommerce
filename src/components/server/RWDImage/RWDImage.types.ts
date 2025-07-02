@@ -17,10 +17,10 @@ export type PropsType = {
   alt: string;
   wrapperClass?: string;
   imgClass?: string;
-  mobileImg: ImgProperties;
-  smallImg?: ImgProperties;
-  mediumImg?: ImgProperties;
-  largeImg?: ImgProperties;
-  xlargeImg?: ImgProperties;
+  mobile: ImgProperties;
+  small?: ImgProperties;
+  medium?: ImgProperties;
+  large?: ImgProperties;
+  xlarge?: ImgProperties;
   priority?: boolean;
 };

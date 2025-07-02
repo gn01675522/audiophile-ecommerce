@@ -62,9 +62,9 @@ const AboutCard: FC = () => {
     <div className={aboutCardWrapperClasses}>
       <RWDImage
         alt="Man listening to music with headphones."
-        mobileImg={imgByRWD.mobile}
-        mediumImg={imgByRWD.medium}
-        xlargeImg={imgByRWD.xlarge}
+        mobile={imgByRWD.mobile}
+        medium={imgByRWD.medium}
+        xlarge={imgByRWD.xlarge}
         wrapperClass={aboutCardImageWrapperClasses}
         imgClass="rounded-[8px]"
       />

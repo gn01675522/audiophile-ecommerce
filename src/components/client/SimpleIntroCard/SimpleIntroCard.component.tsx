@@ -32,7 +32,7 @@ const imgByRWD = {
     src: zx7SpeakerDesktop,
     width: 1110,
     height: 320,
-    sizes: "375px",
+    sizes: "1110px",
   },
 };
 
@@ -48,9 +48,9 @@ const SimpleIntroCard = () => {
     <div className={simpleIntroCardWrapperClasses}>
       <RWDImage
         alt="ZX7 speaker image"
-        mobileImg={imgByRWD.mobile}
-        mediumImg={imgByRWD.medium}
-        xlargeImg={imgByRWD.xlarge}
+        mobile={imgByRWD.mobile}
+        medium={imgByRWD.medium}
+        xlarge={imgByRWD.xlarge}
         wrapperClass={simpleIntroCardImgWrapperClasses}
       />
       <div className="flex flex-col gap-8">

@@ -37,17 +37,18 @@ export const productCardImageWrapperClasses = (variant: VariantType) =>
 
 export const productCardContentWrapperClasses = (variant: VariantType) =>
   mergeRWDClassesHelper({
-    [RWD_VARIANTS.base]: `flex flex-col ${
+    [RWD_VARIANTS.base]: `flex flex-col`,
+    [RWD_VARIANTS.mobile]: `${
       variant === "preview" ? "items-center" : "items-start"
-    }`,
-    [RWD_VARIANTS.mobile]: "gap-6",
+    } gap-6`,
     [RWD_VARIANTS.medium]: "md:w-143 md:gap-0",
     [RWD_VARIANTS.xlarge]: "xl:w-[445px] xl:items-start",
   });
 
 export const productCardSubTitleClasses = (variant: VariantType) =>
   mergeRWDClassesHelper({
-    [RWD_VARIANTS.base]: "text-xs font-normal tracking-[10px] text-primary",
+    [RWD_VARIANTS.base]: "font-normal tracking-[10px] text-primary",
+    [RWD_VARIANTS.mobile]: "text-xs",
     [RWD_VARIANTS.medium]: `${
       variant === "preview" ? "md:mb-4" : "md:text-[12px] md:mb-[17px]"
     }`,
@@ -56,9 +57,10 @@ export const productCardSubTitleClasses = (variant: VariantType) =>
 
 export const productCardTitleClasses = (variant: VariantType) =>
   mergeRWDClassesHelper({
-    [RWD_VARIANTS.base]: "text-3xl tracking-[1px]",
+    [RWD_VARIANTS.base]: "tracking-[1px]",
+    [RWD_VARIANTS.mobile]: "text-3xl",
     [RWD_VARIANTS.medium]: `${variant === "purchase" && "text-xl"} md:mb-8`,
-    [RWD_VARIANTS.xlarge]: "text-3xl",
+    [RWD_VARIANTS.xlarge]: "xl:text-3xl",
   });
 
 export const productCardDescriptionClasses = (variant: VariantType) =>

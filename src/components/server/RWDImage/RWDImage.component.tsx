@@ -10,40 +10,40 @@ const RWDImage: FC<PropsType> = ({
   alt,
   wrapperClass,
   imgClass,
-  mobileImg,
-  smallImg,
-  mediumImg,
-  largeImg,
-  xlargeImg,
+  mobile,
+  small,
+  medium,
+  large,
+  xlarge,
 }) => {
   const common = { alt, sizes: "100vw", quality: 80 };
   const {
-    props: { srcSet: mobile, ...rest },
-  } = getImageProps(imagePropsPropertiesHelper({ common, target: mobileImg }));
+    props: { srcSet: mobileSet, ...rest },
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: mobile }));
 
   const {
-    props: { srcSet: small },
-  } = getImageProps(imagePropsPropertiesHelper({ common, target: smallImg }));
+    props: { srcSet: smallSet },
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: small }));
 
   const {
-    props: { srcSet: medium },
-  } = getImageProps(imagePropsPropertiesHelper({ common, target: mediumImg }));
+    props: { srcSet: mediumSet },
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: medium }));
 
   const {
-    props: { srcSet: large },
-  } = getImageProps(imagePropsPropertiesHelper({ common, target: largeImg }));
+    props: { srcSet: largeSet },
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: large }));
 
   const {
-    props: { srcSet: xlarge },
-  } = getImageProps(imagePropsPropertiesHelper({ common, target: xlargeImg }));
+    props: { srcSet: xlargeSet },
+  } = getImageProps(imagePropsPropertiesHelper({ common, target: xlarge }));
 
   return (
     <picture className={wrapperClass}>
-      {xlargeImg && <source media="(min-width: 1440px)" srcSet={xlarge} />}
-      {largeImg && <source media="(min-width: 1024px)" srcSet={large} />}
-      {mediumImg && <source media="(min-width: 768px)" srcSet={medium} />}
-      {smallImg && <source media="(min-width: 560px)" srcSet={small} />}
-      <source media="(max-width: 588px)" srcSet={mobile} />
+      {xlarge && <source media="(min-width: 1440px)" srcSet={xlargeSet} />}
+      {large && <source media="(min-width: 1024px)" srcSet={largeSet} />}
+      {medium && <source media="(min-width: 768px)" srcSet={mediumSet} />}
+      {small && <source media="(min-width: 560px)" srcSet={smallSet} />}
+      <source media="(max-width: 559px)" srcSet={mobileSet} />
       <img {...rest} className={cn("w-full h-full", imgClass)} />
     </picture>
   );

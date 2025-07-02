@@ -56,9 +56,9 @@ const IntroCard: FC = () => {
       <CircleSVG className={introCardCircleSVGClasses} />
       <RWDImage
         alt="ZX9 speaker image"
-        mobileImg={imgByRWD.mobile}
-        mediumImg={imgByRWD.medium}
-        xlargeImg={imgByRWD.xlarge}
+        mobile={imgByRWD.mobile}
+        medium={imgByRWD.medium}
+        xlarge={imgByRWD.xlarge}
         wrapperClass={introCardImageWrapperClasses}
       />
       <div className={introCardCTABlockClasses}>

@@ -45,16 +45,14 @@ const ProductCard: FC<PropsType> = ({
     useCountQuantity();
   const transformImage = getImageSettingHelper(productInfo, variant);
 
-  console.log(transformImage);
-
   return (
     <article className={cn(productCardWrapperClasses(variant), wrapperClass)}>
       <figure className={productCardFigureClasses}>
         <RWDImage
           alt={`${productInfo.name} product picture.`}
-          mobileImg={transformImage.mobile}
-          mediumImg={transformImage.tablet}
-          xlargeImg={transformImage.desktop}
+          mobile={transformImage.mobile}
+          medium={transformImage.tablet}
+          xlarge={transformImage.desktop}
           wrapperClass={productCardImageWrapperClasses(variant)}
           priority
         />
