@@ -25,9 +25,7 @@ const navLinksForDesktop = [{ url: "/", category: "HOME" }, ...linksSetting];
 const Navbar: FC = () => {
   const { isOpen, setIsOpen, ref } = useDropdown();
 
-  const onChangeShowListHandler = () => {
-    setIsOpen(!isOpen);
-  };
+  const onChangeShowListHandler = () => setIsOpen(!isOpen);
 
   return (
     <nav className={navbarWrapperClasses} ref={ref}>
@@ -45,11 +43,18 @@ const Navbar: FC = () => {
       <Logo className={navbarLogoClasses} />
 
       {isOpen && (
-        <div>
-          <Backdrop className="absolute top-[90px] left-0" />
+        <>
+          <Backdrop
+            className="absolute top-[90px] left-0"
+            onClick={onChangeShowListHandler}
+          />
           <ul className={navbarListWrapperClasses}>
             {linksSetting.map((link) => (
-              <li key={link.category} className="w-full h-max list-none">
+              <li
+                key={link.category}
+                className="w-full h-max list-none"
+                onClick={onChangeShowListHandler}
+              >
                 <CategoryCard
                   key={link.category}
                   link={link.url}
@@ -58,7 +63,7 @@ const Navbar: FC = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </>
       )}
       <ul className={navbarListForDesktopClasses}>
         {navLinksForDesktop.map((item, i) => (
