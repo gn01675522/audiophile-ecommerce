@@ -3,7 +3,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import RightArrowSVG from "@/components/server/RightArrowSVG/RightArrowSVG.component";
 import Button from "../../client/Button/Button.component";
 import { ButtonVariant } from "../../client/Button/button.types";
 import headPhonesImg from "@/assets/category-card/image-category-headphones.png";
@@ -64,7 +65,7 @@ const CategoryCard: FC<CategoryCard> = ({ link, category }) => {
         </span>
         <Button
           variant={ButtonVariant.ghost}
-          endIcon={<ArrowForwardIosIcon style={{ fontSize: "12px" }} />}
+          endIcon={<RightArrowSVG />}
           onClick={onClickToNavigate}
           className="uppercase"
         >

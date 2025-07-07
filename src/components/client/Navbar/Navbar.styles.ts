@@ -8,13 +8,9 @@ export const navbarWrapperClasses = mergeRWDClassesHelper({
   [RWD_VARIANTS.xlarge]: "xl:h-[97px] xl:px-[165px]",
 });
 
-export const navbarTriggerClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "w-4 h-3.75 flex flex-col gap-0.75 cursor-pointer",
-  [RWD_VARIANTS.xlarge]: "xl:hidden",
-});
-
 export const navbarLogoClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.medium]: "md:flex-1 md:justify-start",
+  [RWD_VARIANTS.base]: "w-min",
+  [RWD_VARIANTS.medium]: "md:mr-auto md:justify-start",
   [RWD_VARIANTS.xlarge]: "xl:flex-initial",
 });
 

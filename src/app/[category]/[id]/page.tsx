@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { HTTP_METHODS } from "next/dist/server/web/http";
 
 import ProductCard from "../features/ProductCard/ProductCard.component";
 import RWDImage from "@/components/server/RWDImage/RWDImage.component";
 
-import { fetcherHelper } from "@/lib/utils/fetcher.utils";
-import { apiProductById } from "@/lib/apis/apis";
+import { getProductById } from "@/lib/apis/apis";
 
 import { productDetailImageSetting } from "./page.setting";
 
@@ -22,7 +20,6 @@ import {
 } from "./page.styles";
 
 import type { FC } from "react";
-import type { ProductType } from "@/app/api/products/productsRoute.type";
 import type { PRODUCT_CATEGORY_CLASSES } from "@/shared/shared.types";
 
 type PropsType = {
@@ -32,10 +29,7 @@ type PropsType = {
 const ProductDetail: FC<PropsType> = async ({ params }) => {
   const { category, id } = await params;
 
-  const { result } = await fetcherHelper<ProductType>({
-    url: apiProductById(category, id),
-    method: HTTP_METHODS[0],
-  });
+  const { result } = await getProductById(category, id);
 
   return (
     <section className={productDetailWrapperClasses}>

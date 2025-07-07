@@ -1,12 +1,12 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 import { productsDummyData } from "@/data/data.dummy";
 
 export const GET = async (
-  req: Request,
-  { params }: { params: Promise<{ id: string }> }
+  req: NextRequest,
+  { params }: { params: { id: string } }
 ) => {
-  const { id } = await params;
+  const { id } = params;
 
   try {
     const product = productsDummyData.find(

@@ -1,11 +1,15 @@
 export const texts = {
   common: {
     shop: "shop",
+    cart: "cart",
     seeProduct: "see product",
     newProduct: "new product",
     addToCart: "add to cart",
     features: "features",
     inTheBox: "in the box",
+    removeAll: "remove all",
+    checkout: "checkout",
+    total: "total",
   },
   category: {
     headPhones: "headphones",

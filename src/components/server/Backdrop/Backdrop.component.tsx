@@ -9,10 +9,10 @@ type PropsType = {
 };
 
 const Backdrop: FC<PropsType> = ({ children, className, onClick }) => {
-  const combinedClasses = cn("w-full h-screen bg-black opacity-40", className);
+  const combinedClasses = cn("w-full h-screen bg-[#00000066]", className);
 
   return (
-    <div className={combinedClasses} onClick={onClick}>
+    <div className={combinedClasses} onClick={onClick} role="dialog">
       {children}
     </div>
   );

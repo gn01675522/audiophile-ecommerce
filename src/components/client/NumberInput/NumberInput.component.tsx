@@ -8,30 +8,38 @@ import {
 
 import { BUTTON_ACTIONS } from "@/shared/shared.types";
 
-import type { FC } from "react";
+import type { FC, MouseEvent } from "react";
 import type { INumberInputProps } from "./numberInput.types";
 
 const NumberInput: FC<INumberInputProps> = ({
   title,
   value,
-  min,
+  min = 0,
   wrapperClass,
+  buttonClass,
   inputClass,
   id = "number-input",
   onClickToChangeQuantity,
   ...props
 }) => {
+  const combinedWrapperClasses = cn(numberInputWrapperClasses, wrapperClass);
+  const combinedButtonClasses = cn(numberInputButtonClasses, buttonClass);
+  const combinedInputClass = cn(numberInputClasses, inputClass);
+
+  const onClickHandler = (id: string) => (e: MouseEvent<HTMLButtonElement>) =>
+    onClickToChangeQuantity(e, id);
+
   return (
-    <fieldset className={cn(numberInputWrapperClasses, wrapperClass)}>
+    <fieldset className={combinedWrapperClasses}>
       <label htmlFor={id} className="sr-only">
         {`${title} field`}
       </label>
       <button
-        className={numberInputButtonClasses}
+        className={combinedButtonClasses}
         aria-label="Decrease quantity"
         name={BUTTON_ACTIONS.decrease}
         disabled={value === min}
-        onClick={onClickToChangeQuantity}
+        onClick={onClickHandler(id)}
       >
         -
       </button>
@@ -40,14 +48,14 @@ const NumberInput: FC<INumberInputProps> = ({
         id={id}
         value={value}
         readOnly
-        className={cn(numberInputClasses, inputClass)}
+        className={combinedInputClass}
         {...props}
       />
       <button
-        className={numberInputButtonClasses}
+        className={combinedButtonClasses}
         aria-label="Increase quantity"
         name={BUTTON_ACTIONS.increase}
-        onClick={onClickToChangeQuantity}
+        onClick={onClickHandler(id)}
       >
         +
       </button>

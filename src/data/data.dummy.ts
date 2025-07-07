@@ -8,6 +8,7 @@ export const productsDummyData = [
       tablet: "/products/yx1Earphones/tablet/image-product.jpg",
       desktop: "/products/yx1Earphones/desktop/image-product.jpg",
     },
+    cartImg: "/cart/image-yx1-earphones.jpg",
     category: "earphones",
     categoryImage: {
       mobile: "/products/yx1Earphones/mobile/image-category-page-preview.jpg",
@@ -99,6 +100,7 @@ export const productsDummyData = [
       tablet: "/products/xx59Headphones/tablet/image-product.jpg",
       desktop: "/products/xx59Headphones/desktop/image-product.jpg",
     },
+    cartImg: "/cart/image-xx59-headphones.jpg",
     category: "headphones",
     categoryImage: {
       mobile: "/products/xx59Headphones/mobile/image-category-page-preview.jpg",
@@ -188,6 +190,7 @@ export const productsDummyData = [
       tablet: "/products/xx99MarkOneHeadphones/tablet/image-product.jpg",
       desktop: "/products/xx99MarkOneHeadphones/desktop/image-product.jpg",
     },
+    cartImg: "/cart/image-xx99-mark-one-headphones.jpg",
     category: "headphones",
     categoryImage: {
       mobile:
@@ -278,6 +281,7 @@ export const productsDummyData = [
       tablet: "/products/xx99MarkTwoHeadphones/tablet/image-product.jpg",
       desktop: "/products/xx99MarkTwoHeadphones/desktop/image-product.jpg",
     },
+    cartImg: "/cart/image-xx99-mark-two-headphones.jpg",
     category: "headphones",
     categoryImage: {
       mobile:
@@ -372,6 +376,7 @@ export const productsDummyData = [
       tablet: "/products/zx7Speaker/tablet/image-product.jpg",
       desktop: "/products/zx7Speaker/desktop/image-product.jpg",
     },
+    cartImg: "/cart/image-zx7-speaker.jpg",
     category: "speakers",
     categoryImage: {
       mobile: "/products/zx7Speaker/mobile/image-category-page-preview.jpg",
@@ -463,6 +468,7 @@ export const productsDummyData = [
       tablet: "/products/zx9Speaker/tablet/image-product.jpg",
       desktop: "/products/zx9Speaker/desktop/image-product.jpg",
     },
+    cartImg: "/cart/image-zx9-speaker.jpg",
     category: "speakers",
     categoryImage: {
       mobile: "/products/zx9Speaker/mobile/image-category-page-preview.jpg",

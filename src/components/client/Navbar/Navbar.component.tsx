@@ -2,17 +2,18 @@
 import Link from "next/link";
 
 import Logo from "@/components/server/Logo/Logo.component";
-import Cart from "../../Cart/Cart.component";
+import CartSVG from "@/components/server/CartSVG/CartSVG.component";
 import CategoryCard from "../CategoryCard/CategoryCard.component";
 import Backdrop from "@/components/server/Backdrop/Backdrop.component";
+import CartModal from "../CartModal/CartModal.component";
+import Hamburger from "../Hamburger/Hamburger.component";
 
-import { useDropdown } from "./navbar.hooks";
+import { useDropdownControl } from "./Navbar.hooks";
 
 import { linksSetting } from "@/shared/shared.setting";
 
 import {
   navbarWrapperClasses,
-  navbarTriggerClasses,
   navbarLogoClasses,
   navbarListWrapperClasses,
   navbarListForDesktopClasses,
@@ -23,37 +24,33 @@ import type { FC } from "react";
 const navLinksForDesktop = [{ url: "/", category: "HOME" }, ...linksSetting];
 
 const Navbar: FC = () => {
-  const { isOpen, setIsOpen, ref } = useDropdown();
+  const {
+    isDropdownOpen,
+    isCartOpen,
+    setIsDropdownOpen,
+    setIsCartOpen,
+    dropDownRef,
+    cartRef,
+  } = useDropdownControl();
 
-  const onChangeShowListHandler = () => setIsOpen(!isOpen);
+  const onClickDropdownHandler = () => setIsDropdownOpen(!isDropdownOpen);
+  const onClickCartHandler = () => setIsCartOpen(!isCartOpen);
 
   return (
-    <nav className={navbarWrapperClasses} ref={ref}>
-      <input
-        type="checkbox"
-        onChange={onChangeShowListHandler}
-        className="hidden peer"
-        id="list-trigger"
-      />
-      <label className={navbarTriggerClasses} htmlFor="list-trigger">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <span key={i} className="w-4 h-0.75 bg-white" />
-        ))}
-      </label>
+    <nav className={navbarWrapperClasses}>
+      <Hamburger onClick={onClickDropdownHandler} className="xl:hidden" />
+
       <Logo className={navbarLogoClasses} />
 
-      {isOpen && (
+      {isDropdownOpen && (
         <>
-          <Backdrop
-            className="absolute top-[90px] left-0"
-            onClick={onChangeShowListHandler}
-          />
-          <ul className={navbarListWrapperClasses}>
+          <Backdrop className="absolute top-[90px] left-0" />
+          <ul className={navbarListWrapperClasses} ref={dropDownRef}>
             {linksSetting.map((link) => (
               <li
                 key={link.category}
                 className="w-full h-max list-none"
-                onClick={onChangeShowListHandler}
+                onClick={onClickDropdownHandler}
               >
                 <CategoryCard
                   key={link.category}
@@ -68,14 +65,18 @@ const Navbar: FC = () => {
       <ul className={navbarListForDesktopClasses}>
         {navLinksForDesktop.map((item, i) => (
           <li key={i} className="w-full md:w-min">
-            <Link href={item.url} className="block w-full hover:text-primary">
+            <Link href={item.url} className="w-full hover:text-primary">
               {item.category.toUpperCase()}
             </Link>
           </li>
         ))}
       </ul>
 
-      <Cart />
+      <button onClick={onClickCartHandler} id="cart">
+        <CartSVG className="cursor-pointer" />
+      </button>
+
+      {isCartOpen && <CartModal ref={cartRef} onClick={onClickCartHandler} />}
     </nav>
   );
 };

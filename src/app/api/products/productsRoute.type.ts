@@ -15,6 +15,7 @@ export type ProductType = {
     tablet: string;
     desktop: string;
   };
+  cartImg: string;
   new: boolean;
   price: number;
   description: string;
