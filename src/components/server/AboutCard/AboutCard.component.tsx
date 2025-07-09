@@ -3,6 +3,8 @@ import gearWithHumanDesktop from "@/assets/shared/desktop/image-best-gear.jpg";
 import gearWithHumanTablet from "@/assets/shared/tablet/image-best-gear.jpg";
 import gearWithHumanMobile from "@/assets/shared/mobile/image-best-gear.jpg";
 
+import { splitTitleHelper } from "./AboutCard.helper";
+
 import { texts } from "@/shared/shared.texts";
 
 import {
@@ -14,7 +16,7 @@ import {
   aboutCardParagraphClasses,
 } from "./AboutCard.styles";
 
-import type { FC, ReactNode } from "react";
+import type { FC } from "react";
 
 const imgByRWD = {
   mobile: {
@@ -37,26 +39,6 @@ const imgByRWD = {
   },
 };
 
-const titleSplit = texts.home.about.title
-  .split(" ")
-  .reduce<ReactNode[]>((acc, part, i) => {
-    const isTarget = part.toLowerCase() === "best";
-
-    if (i > 0) acc.push(" ");
-
-    acc.push(
-      isTarget ? (
-        <span key={i} className="text-primary">
-          {part}
-        </span>
-      ) : (
-        part
-      )
-    );
-
-    return acc;
-  }, []);
-
 const AboutCard: FC = () => {
   return (
     <div className={aboutCardWrapperClasses}>
@@ -70,7 +52,9 @@ const AboutCard: FC = () => {
       />
       <article className={aboutCardArticleClasses}>
         <div className={aboutCardArticleWrapperClasses}>
-          <h2 className={aboutCardTitleClasses}>{titleSplit}</h2>
+          <h2 className={aboutCardTitleClasses}>
+            {splitTitleHelper(texts.home.about.title)}
+          </h2>
           <p className={aboutCardParagraphClasses}>
             {texts.home.about.paragraphs}
           </p>

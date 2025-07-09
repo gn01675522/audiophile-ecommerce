@@ -8,7 +8,7 @@ import Backdrop from "@/components/server/Backdrop/Backdrop.component";
 import CartModal from "../CartModal/CartModal.component";
 import Hamburger from "../Hamburger/Hamburger.component";
 
-import { useDropdownControl } from "./Navbar.hooks";
+import { useOverlayControl } from "./Navbar.hooks";
 
 import { linksSetting } from "@/shared/shared.setting";
 
@@ -31,7 +31,7 @@ const Navbar: FC = () => {
     setIsCartOpen,
     dropDownRef,
     cartRef,
-  } = useDropdownControl();
+  } = useOverlayControl();
 
   const onClickDropdownHandler = () => setIsDropdownOpen(!isDropdownOpen);
   const onClickCartHandler = () => setIsCartOpen(!isCartOpen);
@@ -47,11 +47,7 @@ const Navbar: FC = () => {
           <Backdrop className="absolute top-[90px] left-0" />
           <ul className={navbarListWrapperClasses} ref={dropDownRef}>
             {linksSetting.map((link) => (
-              <li
-                key={link.category}
-                className="w-full h-max list-none"
-                onClick={onClickDropdownHandler}
-              >
+              <li key={link.category} className="w-full h-max list-none">
                 <CategoryCard
                   key={link.category}
                   link={link.url}
@@ -76,7 +72,7 @@ const Navbar: FC = () => {
         <CartSVG className="cursor-pointer" />
       </button>
 
-      {isCartOpen && <CartModal ref={cartRef} onClick={onClickCartHandler} />}
+      {isCartOpen && <CartModal ref={cartRef} />}
     </nav>
   );
 };

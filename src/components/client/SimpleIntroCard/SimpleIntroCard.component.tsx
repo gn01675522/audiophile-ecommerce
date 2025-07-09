@@ -10,12 +10,15 @@ import { ButtonVariant } from "../Button/button.types";
 
 import { texts } from "@/shared/shared.texts";
 
+import { PRODUCT_CATEGORY } from "@/shared/shared.types";
+
 import {
   simpleIntroCardWrapperClasses,
   simpleIntroCardImgWrapperClasses,
 } from "./SimpleIntroCard.styles";
 
-const imgByRWD = {
+const simpleIntroCardSetting = {
+  targetRoute: `/${PRODUCT_CATEGORY.speakers}/5`,
   mobile: {
     src: zx7SpeakerMobile,
     width: 327,
@@ -41,16 +44,16 @@ const SimpleIntroCard = () => {
   const cardTitle = `${texts.product.zx7.name} ${texts.product.zx7.category}`;
 
   const onClickToNavigation = () => {
-    router.push("/product/zx7");
+    router.push(simpleIntroCardSetting.targetRoute);
   };
 
   return (
     <div className={simpleIntroCardWrapperClasses}>
       <RWDImage
         alt="ZX7 speaker image"
-        mobile={imgByRWD.mobile}
-        medium={imgByRWD.medium}
-        xlarge={imgByRWD.xlarge}
+        mobile={simpleIntroCardSetting.mobile}
+        medium={simpleIntroCardSetting.medium}
+        xlarge={simpleIntroCardSetting.xlarge}
         wrapperClass={simpleIntroCardImgWrapperClasses}
       />
       <div className="flex flex-col gap-8">

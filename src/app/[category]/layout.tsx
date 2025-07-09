@@ -1,26 +1,22 @@
-import {
-  categoryLayoutHeaderClasses,
-  categoryLayoutTitleClasses,
-} from "./layout.styles";
+import CategoryNav from "../features/CategoryNav/CategoryNav.feature";
+import AboutSection from "../features/AboutSection/AboutSection.feature";
+
+import { categoryLayoutMarketingInfoWrapperClasses } from "./layout.styles";
 
 import type { FC, ReactNode } from "react";
 
 type PropsType = {
   children: ReactNode;
-  params: { category: "headphones" | "earphones" | "speakers" };
 };
 
-const CategoryLayout: FC<PropsType> = async ({ children, params }) => {
-  const { category } = await params;
-
+const CategoryLayout: FC<PropsType> = async ({ children }) => {
   return (
     <section>
-      <header className={categoryLayoutHeaderClasses}>
-        <h1 className={categoryLayoutTitleClasses}>
-          {category?.toUpperCase()}
-        </h1>
-      </header>
       {children}
+      <section className={categoryLayoutMarketingInfoWrapperClasses}>
+        <CategoryNav />
+        <AboutSection />
+      </section>
     </section>
   );
 };

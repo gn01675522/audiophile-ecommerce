@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useParams } from "next/navigation";
 
-export const useDropdownControl = () => {
+export const useOverlayControl = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const params = useParams();
 
   const dropDownRef = useRef<HTMLUListElement | null>(null);
   const cartRef = useRef<HTMLDivElement | null>(null);
@@ -42,6 +44,11 @@ export const useDropdownControl = () => {
       document.removeEventListener("keydown", handlePressESC);
     };
   }, []);
+
+  useEffect(() => {
+    setIsCartOpen(false);
+    setIsDropdownOpen(false);
+  }, [params]);
 
   return {
     isDropdownOpen,

@@ -7,9 +7,12 @@ import yx1EarphonesMobile from "@/assets/intro-card/mobile/image-earphones-yx1.j
 
 import { splitCardWrapperClasses } from "./SplitCard.styles";
 
+import { PRODUCT_CATEGORY } from "@/shared/shared.types";
+
 import type { FC } from "react";
 
-const imgByRWD = {
+const splitCardSetting = {
+  targetRoute: `/${PRODUCT_CATEGORY.earphones}/1`,
   mobile: {
     src: yx1EarphonesMobile,
     width: 327,
@@ -35,12 +38,15 @@ const SplitCard: FC = () => {
     <div className={splitCardWrapperClasses}>
       <RWDImage
         alt="YX1 earphones"
-        mobile={imgByRWD.mobile}
-        medium={imgByRWD.medium}
-        xlarge={imgByRWD.xlarge}
+        mobile={splitCardSetting.mobile}
+        medium={splitCardSetting.medium}
+        xlarge={splitCardSetting.xlarge}
         wrapperClass="w-full min-w-[250.5px] max-w-[540px] h-50 rounded-[8px] overflow-hidden md:h-80"
       />
-      <BasicIntroCard className="w-full min-w-[250.5px] max-w-[540px]" />
+      <BasicIntroCard
+        route={splitCardSetting.targetRoute}
+        className="w-full min-w-[250.5px] max-w-[540px]"
+      />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import {
 } from "./productCard.setting";
 
 import type { ProductType } from "@/app/api/products/productsRoute.type";
-import type { VariantType } from "./ProductCard.component";
+import type { VariantType } from "./ProductCard.feature";
 
 export const getImageSettingHelper = (
   data: ProductType,

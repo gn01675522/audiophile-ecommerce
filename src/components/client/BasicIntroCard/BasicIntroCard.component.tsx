@@ -13,10 +13,11 @@ import { texts } from "@/shared/shared.texts";
 import type { FC } from "react";
 
 type PropsType = {
+  route: string;
   className?: string;
 };
 
-const BasicIntroCard: FC<PropsType> = ({ className }) => {
+const BasicIntroCard: FC<PropsType> = ({ route, className }) => {
   const router = useRouter();
   const cardTitle = `${texts.product.yx1.name} ${texts.product.yx1.category}`;
   const wrapperCombined = twMerge(
@@ -24,7 +25,7 @@ const BasicIntroCard: FC<PropsType> = ({ className }) => {
   );
 
   const onClickToNavigation = () => {
-    router.push("/product/yx1");
+    router.push(route);
   };
 
   return (

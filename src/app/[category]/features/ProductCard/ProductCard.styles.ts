@@ -2,7 +2,7 @@ import { mergeRWDClassesHelper } from "@/lib/utils/mergeClasses.utils";
 
 import { RWD_VARIANTS } from "@/shared/shared.types";
 
-import type { VariantType } from "./ProductCard.component";
+import type { VariantType } from "./ProductCard.feature";
 
 export const productCardWrapperClasses = (variant: VariantType) =>
   mergeRWDClassesHelper({

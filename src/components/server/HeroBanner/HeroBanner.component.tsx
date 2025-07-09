@@ -4,6 +4,8 @@ import tabletBannerImage from "@/assets/banner/image-hero-tablet.jpg";
 import mobileBannerImage from "@/assets/banner/image-hero-mobile.jpg";
 import RWDImage from "../RWDImage/RWDImage.component";
 
+import { PRODUCT_CATEGORY } from "@/shared/shared.types";
+
 import {
   heroBannerWrapperClasses,
   heroBannerContentWrapperClasses,
@@ -12,7 +14,8 @@ import {
 
 import type { FC } from "react";
 
-const imgByRWD = {
+const bannerSetting = {
+  targetRoute: `/${PRODUCT_CATEGORY.headphones}/3`,
   mobile: {
     src: mobileBannerImage,
     width: 375,
@@ -39,12 +42,12 @@ const HeroBanner: FC = () => {
       <div className={heroBannerContentWrapperClasses}>
         <RWDImage
           alt="Hero banner"
-          mobile={imgByRWD.mobile}
-          medium={imgByRWD.medium}
-          xlarge={imgByRWD.xlarge}
+          mobile={bannerSetting.mobile}
+          medium={bannerSetting.medium}
+          xlarge={bannerSetting.xlarge}
           wrapperClass={heroBannerImageClasses}
         />
-        <CTABlock />
+        <CTABlock route={bannerSetting.targetRoute} />
       </div>
     </div>
   );

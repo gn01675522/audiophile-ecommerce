@@ -21,9 +21,12 @@ import {
 
 import { texts } from "@/shared/shared.texts";
 
+import { PRODUCT_CATEGORY } from "@/shared/shared.types";
+
 import type { FC } from "react";
 
-const imgByRWD = {
+const introCardSetting = {
+  targetRoute: `/${PRODUCT_CATEGORY.speakers}/6`,
   mobile: {
     src: zx9SpeakerMobile,
     width: 172.25,
@@ -48,7 +51,7 @@ const IntroCard: FC = () => {
   const router = useRouter();
 
   const onClickToNavigation = () => {
-    router.push("/product/zx9");
+    router.push(introCardSetting.targetRoute);
   };
 
   return (
@@ -56,9 +59,9 @@ const IntroCard: FC = () => {
       <CircleSVG className={introCardCircleSVGClasses} />
       <RWDImage
         alt="ZX9 speaker image"
-        mobile={imgByRWD.mobile}
-        medium={imgByRWD.medium}
-        xlarge={imgByRWD.xlarge}
+        mobile={introCardSetting.mobile}
+        medium={introCardSetting.medium}
+        xlarge={introCardSetting.xlarge}
         wrapperClass={introCardImageWrapperClasses}
       />
       <div className={introCardCTABlockClasses}>

@@ -17,17 +17,15 @@ import {
 import type { FC, RefObject } from "react";
 
 type PropsType = {
-  onClick: () => void;
   ref?: RefObject<HTMLDivElement | null>;
 };
 
-const CartModal: FC<PropsType> = ({ ref, onClick }) => {
+const CartModal: FC<PropsType> = ({ ref }) => {
   const { cartItems, totalPrice, changeQuantityHandler, clearCartHandler } =
     useCartAction();
   const router = useRouter();
 
   const onClickToNavigation = () => {
-    onClick();
     router.push("/checkout");
   };
 

@@ -10,6 +10,7 @@ export const texts = {
     removeAll: "remove all",
     checkout: "checkout",
     total: "total",
+    youMayAlsoLike: "you may also like",
   },
   category: {
     headPhones: "headphones",

@@ -1,12 +1,12 @@
 import {
-  productDetailFirstImgClasses,
-  productDetailSecondImgClasses,
-  productDetailThirdImgClasses,
-} from "./page.styles";
+  imageGalleryFirstImgClasses,
+  imageGallerySecondImgClasses,
+  imageGalleryThirdImgClasses,
+} from "./ImageGallery.styles";
 
 import type { ProductType } from "@/app/api/products/productsRoute.type";
 
-export const productDetailImageSetting = (data: ProductType) => [
+export const imageGallerySetting = (data: ProductType) => [
   {
     id: 1,
     mobile: {
@@ -27,7 +27,7 @@ export const productDetailImageSetting = (data: ProductType) => [
       height: 280,
       sizes: "445px",
     },
-    className: productDetailFirstImgClasses,
+    className: imageGalleryFirstImgClasses,
   },
 
   {
@@ -50,7 +50,7 @@ export const productDetailImageSetting = (data: ProductType) => [
       height: 280,
       sizes: "445px",
     },
-    className: productDetailSecondImgClasses,
+    className: imageGallerySecondImgClasses,
   },
 
   {
@@ -73,6 +73,6 @@ export const productDetailImageSetting = (data: ProductType) => [
       height: 592,
       sizes: "635px",
     },
-    className: productDetailThirdImgClasses,
+    className: imageGalleryThirdImgClasses,
   },
 ];

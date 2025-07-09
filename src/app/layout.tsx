@@ -2,18 +2,6 @@ import { Manrope } from "next/font/google";
 
 import Navbar from "@/components/client/Navbar/Navbar.component";
 import Footer from "@/components/server/Footer/Footer.component";
-import CategoryCard from "@/components/client/CategoryCard/CategoryCard.component";
-import IntroCard from "@/components/client/IntroCard/IntroCard.component";
-import SimpleIntroCard from "@/components/client/SimpleIntroCard/SimpleIntroCard.component";
-import AboutCard from "@/components/server/AboutCard/AboutCard.component";
-import SplitCard from "@/components/server/SplitCard/SplitCard.component";
-
-import { linksSetting } from "@/shared/shared.setting";
-import {
-  layoutSectionWrapperClasses,
-  layoutFirstSectionClasses,
-  layoutSecondSectionClasses,
-} from "@/app/layout.styles";
 
 import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";
@@ -41,28 +29,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
         <header>
           <Navbar />
         </header>
-        <main>
-          {children}
-          <section className={layoutSectionWrapperClasses}>
-            <section className={layoutFirstSectionClasses}>
-              {linksSetting.map((link) => (
-                <CategoryCard
-                  key={link.category}
-                  link={link.url}
-                  category={link.category}
-                />
-              ))}
-            </section>
-            <section className={layoutSecondSectionClasses}>
-              <IntroCard />
-              <SimpleIntroCard />
-              <SplitCard />
-            </section>
-            <section>
-              <AboutCard />
-            </section>
-          </section>
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
