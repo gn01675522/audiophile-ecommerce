@@ -1,3 +1,5 @@
+import { IProductInCart } from "@/lib/utils/cartStorage.utils";
+
 export const PRODUCT_CATEGORY = {
   headphones: "headphones",
   speakers: "speakers",
@@ -23,6 +25,8 @@ export const CLASS_SEGMENT = {
   behavior: "behavior",
   placeholder: "placeholder",
   focus: "focus",
+  checked: "checked",
+  inValid: "inValid",
 };
 export type CLASS_SEGMENT_CLASSES = keyof typeof CLASS_SEGMENT;
 
@@ -38,3 +42,50 @@ export type ResponseType<T> = {
   count: number;
   message: string;
 };
+
+export const PAYMENT_METHOD = {
+  eMoney: "e-Money",
+  cash: "Cash on Delivery",
+} as const;
+export type PAYMENT_METHOD_CLASSES =
+  (typeof PAYMENT_METHOD)[keyof typeof PAYMENT_METHOD];
+
+export const ORDER_FORM_FIELD = {
+  name: "name",
+  email: "email",
+  phone: "phone",
+  address: "address",
+  zip: "zip",
+  city: "city",
+  country: "country",
+  paymentMethod: "paymentMethod",
+  eMoneyNumber: "eMoneyNumber",
+  eMoneyPin: "eMoneyPin",
+};
+export type ORDER_FORM_FIELD_CLASSES =
+  (typeof ORDER_FORM_FIELD)[keyof typeof ORDER_FORM_FIELD];
+
+export type OrderFormTypes = {
+  [ORDER_FORM_FIELD.name]: string;
+  [ORDER_FORM_FIELD.email]: string;
+  [ORDER_FORM_FIELD.phone]: string;
+  [ORDER_FORM_FIELD.address]: string;
+  [ORDER_FORM_FIELD.zip]: string;
+  [ORDER_FORM_FIELD.city]: string;
+  [ORDER_FORM_FIELD.country]: string;
+  [ORDER_FORM_FIELD.eMoneyNumber]: string;
+  [ORDER_FORM_FIELD.eMoneyPin]: string;
+};
+
+export type OrderDetails = {
+  products: IProductInCart[];
+  total: number;
+  VAT: number;
+  shippingFee: number;
+  grandTotal: number;
+  clientInfo: OrderFormTypes;
+};
+
+export interface IOrder extends OrderDetails {
+  id: string;
+}

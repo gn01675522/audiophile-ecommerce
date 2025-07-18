@@ -9,7 +9,7 @@ export const productDetailWrapperClasses = mergeRWDClassesHelper({
 });
 
 export const productDetailGoBackClasses = mergeRWDClassesHelper({
-  [RWD_VARIANTS.base]: "absolute hover:text-primary",
+  [RWD_VARIANTS.base]: "absolute",
   [RWD_VARIANTS.mobile]: "top-4 left-6",
   [RWD_VARIANTS.medium]: "md:top-[33px] md:left-10",
   [RWD_VARIANTS.xlarge]: "xl:top-[79px] xl:left-[165px]",

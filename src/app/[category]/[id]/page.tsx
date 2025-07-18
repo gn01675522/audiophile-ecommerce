@@ -1,9 +1,8 @@
-import Link from "next/link";
-
 import ProductCard from "../features/ProductCard/ProductCard.feature";
 import ProductDetailSection from "./features/ProductDetailSection/ProductDetailSection.feature";
 import ImageGallery from "./features/ImageGallery/ImageGallery.feature";
 import AlsoLikeSection from "./features/AlsoLikeSection/AlsoLikeSection.feature";
+import GoBackButton from "@/components/client/GoBackButton/GoBackButton.component";
 
 import { getProductById } from "@/lib/apis/apis";
 
@@ -26,9 +25,7 @@ const ProductDetail: FC<PropsType> = async ({ params }) => {
 
   return (
     <section className={productDetailWrapperClasses}>
-      <Link href={`/${category}`} className={productDetailGoBackClasses}>
-        Go Back
-      </Link>
+      <GoBackButton className={productDetailGoBackClasses} />
       <ProductCard variant="purchase" productInfo={result} />
       <ProductDetailSection data={result} />
       <ImageGallery data={result} />

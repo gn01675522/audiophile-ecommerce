@@ -1,42 +1,78 @@
 "use client";
 import Image from "next/image";
+import { cn } from "@/lib/utils/cn.utils";
 
 import NumberInput from "../NumberInput/NumberInput.component";
-import type { IProductInCart } from "@/lib/utils/cartStorage.utils";
+
+import { formatCurrency } from "@/lib/utils/formatter.utils";
 
 import type { FC, MouseEvent } from "react";
+import type { IProductInCart } from "@/lib/utils/cartStorage.utils";
 
 type PropsType = {
   item: IProductInCart;
-  onChange: (e: MouseEvent<HTMLButtonElement>, id?: string) => void;
+  isUseForCart?: boolean;
+  imgWidth?: number;
+  imgHeight?: number;
+  imgClass?: string;
+  quantityClass?: string;
+  onChange?: (e: MouseEvent<HTMLButtonElement>, id?: string) => void;
 };
 
-const CartItem: FC<PropsType> = ({ item, onChange }) => {
+const CartItem: FC<PropsType> = ({
+  item,
+  imgWidth = 64,
+  imgHeight = 64,
+  imgClass,
+  quantityClass,
+  isUseForCart = false,
+  onChange,
+}) => {
+  const { id, name, cartImg, price, quantity } = item;
+
+  const formatName = name?.split(" ")[0];
+
+  const combinedImgClasses = cn("w-16 h-16 rounded-lg", imgClass);
+  const combinedQuantityClasses = cn(
+    "font-bold text-[#00000080]",
+    quantityClass
+  );
+
+  const handleChange = (e: MouseEvent<HTMLButtonElement>, id?: string) => {
+    if (!onChange) return;
+    onChange(e, id);
+  };
+
   return (
     <li className="flex justify-between items-center">
       <div className="flex gap-4 items-center">
         <Image
-          width={64}
-          height={64}
+          width={imgWidth}
+          height={imgHeight}
           alt="temp"
-          src={item.cartImg}
+          src={cartImg}
           sizes="64px"
-          className="w-16 h-16 rounded-lg"
+          className={combinedImgClasses}
         />
         <div className="flex flex-col">
-          <strong>{item.name}</strong>
+          <strong>{formatName}</strong>
           <span className="text-sm font-bold text-[#00000080]">
-            $ {item.price.toLocaleString()}
+            {formatCurrency(price)}
           </span>
         </div>
       </div>
-      <NumberInput
-        id={String(item.id)}
-        value={item.quantity}
-        onClickToChangeQuantity={onChange}
-        wrapperClass="w-24 h-8"
-        buttonClass="w-8 h-8"
-      />
+      {isUseForCart && (
+        <NumberInput
+          id={String(id)}
+          value={quantity}
+          onClickToChangeQuantity={handleChange}
+          wrapperClass="w-24 h-8"
+          buttonClass="w-8 h-8"
+        />
+      )}
+      {!isUseForCart && (
+        <span className={combinedQuantityClasses}>x{quantity}</span>
+      )}
     </li>
   );
 };

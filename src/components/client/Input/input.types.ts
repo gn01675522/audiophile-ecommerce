@@ -1,18 +1,20 @@
-import type {
-  RefObject,
-  InputHTMLAttributes,
-  // ComponentPropsWithoutRef,
-} from "react";
+import type { ComponentPropsWithRef } from "react";
 
-export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
+export const INPUT_TYPES = {
+  text: "text",
+  email: "email",
+  password: "password",
+  tel: "tel",
+} as const;
+export type INPUT_TYPES_CLASSES = keyof typeof INPUT_TYPES;
+
+export interface IInput extends ComponentPropsWithRef<"input"> {
+  id: string;
   title: string;
-  placeholder: string;
   isValid?: boolean;
-  type?: "email" | "text" | "password" | "tel" | "url" | "search";
-  isTouched?: boolean;
+  type?: INPUT_TYPES_CLASSES;
   message?: string;
-  pattern?: string;
+  wrapperClassName?: string;
   labelClassName?: string;
   inputClassName?: string;
-  ref: RefObject<HTMLInputElement>;
 }

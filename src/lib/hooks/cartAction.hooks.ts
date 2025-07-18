@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
 
 import {
-  getCartItems,
   changeCartItemQuantity,
   clearCart,
+  getCartDetails,
+  defaultCartDetail,
+  addItemsToCart,
 } from "@/lib/utils/cartStorage.utils";
 
-import { formatCartItems } from "./CartModal.helper";
 import { BUTTON_ACTIONS } from "@/shared/shared.types";
 
 import type { MouseEvent } from "react";
-import type { IProductInCart } from "@/lib/utils/cartStorage.utils";
+import type {
+  ICartDetail,
+  IProductInCart,
+} from "@/lib/utils/cartStorage.utils";
 
 export const useCartAction = () => {
-  const [cartItems, setCartItems] = useState<IProductInCart[]>([]);
+  const [cartDetails, setCartDetails] =
+    useState<ICartDetail>(defaultCartDetail);
 
-  const totalPrice = cartItems.reduce((acc, cur) => {
-    acc += cur.price * cur.quantity;
-    return acc;
-  }, 0);
+  const addItemToCartHandler = (product: IProductInCart) => {
+    addItemsToCart(product);
+    setCartDetails(getCartDetails());
+  };
 
   const clearCartHandler = () => {
     clearCart();
-    setCartItems(formatCartItems(getCartItems()));
+    setCartDetails(getCartDetails());
   };
 
   const changeQuantityHandler = (
@@ -30,40 +35,33 @@ export const useCartAction = () => {
     id?: string
   ) => {
     const idToNumber = Number(id);
-    const targetItem = cartItems.find((item) => item.id === idToNumber);
+    const itemsInCart = cartDetails.cartItems;
+    const targetItem = itemsInCart.find((item) => item.id === idToNumber);
 
     if (!targetItem) return;
 
     const { name } = e.currentTarget;
 
-    if (name === BUTTON_ACTIONS.increase) {
+    if (name === BUTTON_ACTIONS.increase)
       changeCartItemQuantity({
         id: idToNumber,
         quantity: targetItem.quantity + 1,
       });
-    } else if (name === BUTTON_ACTIONS.decrease) {
+    else if (name === BUTTON_ACTIONS.decrease)
       changeCartItemQuantity({
         id: idToNumber,
         quantity: targetItem.quantity - 1,
       });
-    }
-    setCartItems(formatCartItems(getCartItems()));
+    setCartDetails(getCartDetails());
   };
 
   useEffect(() => {
-    const getItems = getCartItems();
-
-    if (getItems.length > 0) {
-      const formatData = formatCartItems(getCartItems());
-
-      setCartItems(formatData);
-    }
-  }, [setCartItems]);
+    setCartDetails(getCartDetails());
+  }, [setCartDetails]);
 
   return {
-    cartItems,
-    totalPrice,
-    setCartItems,
+    cartDetails,
+    addItemToCartHandler,
     changeQuantityHandler,
     clearCartHandler,
   };

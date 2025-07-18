@@ -1,4 +1,5 @@
 import { Manrope } from "next/font/google";
+import { CartContextProvider } from "@/lib/contexts/cart.context";
 
 import Navbar from "@/components/client/Navbar/Navbar.component";
 import Footer from "@/components/server/Footer/Footer.component";
@@ -22,15 +23,19 @@ export const metadata: Metadata = {
   description: "Frontend Mentor Challenge - level: guru",
 };
 
-const RootLayout: FC<RootLayoutProps> = ({ children }) => {
+const RootLayout: FC<RootLayoutProps> = async ({ children }) => {
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-        <header>
-          <Navbar />
-        </header>
-        <main>{children}</main>
-        <Footer />
+        <CartContextProvider>
+          <div className="flex flex-col min-h-screen">
+            <header>
+              <Navbar />
+            </header>
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </CartContextProvider>
       </body>
     </html>
   );

@@ -1,63 +1,54 @@
 "use client";
-import { useState } from "react";
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/lib/utils/cn.utils";
 
-import { inputClassByBehavior } from "./Input.styles";
+import {
+  wrapperSetting,
+  labelSetting,
+  inputClassByBehavior,
+} from "./Input.styles";
+
+import { INPUT_TYPES } from "./input.types";
 
 import type { FC, FocusEvent } from "react";
 import type { IInput } from "./input.types";
 
-const labelSetting = "font-bold";
-
 const Input: FC<IInput> = ({
+  id,
   title,
-  placeholder,
   message,
   isValid = true,
-  type = "text",
-  onBlur,
-  pattern,
-  isTouched = false,
+  type = INPUT_TYPES.text,
+  wrapperClassName,
   labelClassName,
   inputClassName,
-  ref,
   ...props
 }) => {
-  const [isOnTouched, setIsOnTouched] = useState(false);
+  const { onBlur } = props;
 
-  const touchedByWhich = isTouched || isOnTouched;
-
-  const combinedLabelClass = twMerge(
-    clsx(labelSetting, labelClassName ? labelClassName : "")
-  );
-
-  const combinedInputClass = clsx(
-    inputClassByBehavior(isValid, touchedByWhich),
-    inputClassName && inputClassName
-  );
+  const combinedWrapperClass = cn(wrapperSetting, wrapperClassName);
+  const combinedLabelClass = cn(labelSetting(isValid), labelClassName);
+  const combinedInputClass = cn(inputClassByBehavior(isValid), inputClassName);
 
   const onBlurHandler = (e: FocusEvent<HTMLInputElement>) => {
-    setIsOnTouched(true);
-    onBlur?.(e);
+    if (!onBlur) return;
+    onBlur(e);
   };
 
   return (
-    <fieldset className="flex flex-col gap-[9px]">
+    <fieldset className={combinedWrapperClass}>
       <div className="flex justify-between">
-        <label className={combinedLabelClass} htmlFor={title}>
+        <label className={combinedLabelClass} htmlFor={id}>
           {title}
         </label>
-        <span className="text-[12px] text-error font-medium">{message}</span>
+        {!isValid && (
+          <span className="text-[12px] text-error font-medium">{message}</span>
+        )}
       </div>
       <input
         className={combinedInputClass}
-        id={title}
         onBlur={onBlurHandler}
-        ref={ref}
         type={type}
-        placeholder={placeholder}
-        pattern={pattern}
+        id={id}
         {...props}
       />
     </fieldset>

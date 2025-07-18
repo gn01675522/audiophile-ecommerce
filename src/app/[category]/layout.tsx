@@ -9,7 +9,7 @@ type PropsType = {
   children: ReactNode;
 };
 
-const CategoryLayout: FC<PropsType> = async ({ children }) => {
+const CategoryLayout: FC<PropsType> = ({ children }) => {
   return (
     <section>
       {children}

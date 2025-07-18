@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useCartAction } from "./CartModal.hooks";
+import { useCartContext } from "@/lib/contexts/cart.context";
 
 import Backdrop from "@/components/server/Backdrop/Backdrop.component";
 import Button from "../Button/Button.component";
@@ -8,6 +8,7 @@ import { ButtonVariant } from "../Button/button.types";
 import CartItem from "../CartItem/CartItem.component";
 
 import { texts } from "@/shared/shared.texts";
+import { formatCurrency } from "@/lib/utils/formatter.utils";
 
 import {
   cartModalWrapperClasses,
@@ -21,20 +22,20 @@ type PropsType = {
 };
 
 const CartModal: FC<PropsType> = ({ ref }) => {
-  const { cartItems, totalPrice, changeQuantityHandler, clearCartHandler } =
-    useCartAction();
+  const { cartDetails, changeQuantityHandler, clearCartHandler } =
+    useCartContext();
   const router = useRouter();
 
-  const onClickToNavigation = () => {
-    router.push("/checkout");
-  };
+  const { cartItems, total } = cartDetails;
+
+  const onClickToNavigation = () => router.push("/checkout");
 
   return (
     <Backdrop className={cartModalBackdropClasses}>
       <div className={cartModalWrapperClasses} ref={ref}>
         <div className="flex justify-between">
           <h2 className="text-md">
-            {texts.common.cart.toUpperCase()}({cartItems.length})
+            {texts.common.cart.toUpperCase()}({cartItems?.length})
           </h2>
           <button
             className="cursor-pointer capitalize underline text-[#00000080] hover:text-primary"
@@ -44,10 +45,11 @@ const CartModal: FC<PropsType> = ({ ref }) => {
           </button>
         </div>
         <ul className="flex flex-col gap-6">
-          {cartItems.map((item) => (
+          {cartItems?.map((item) => (
             <CartItem
               key={item.id}
               item={item}
+              isUseForCart={true}
               onChange={changeQuantityHandler}
             />
           ))}
@@ -57,20 +59,20 @@ const CartModal: FC<PropsType> = ({ ref }) => {
             <dt className="text-[#00000080]">
               {texts.common.total.toUpperCase()}
             </dt>
-            <dd
-              className="font-bold text-md"
-              aria-label={`$${totalPrice} dollars`}
-            >
-              $ {totalPrice.toLocaleString()}
+            <dd className="font-bold text-md" aria-label={`${total} dollars`}>
+              {formatCurrency(total)}
             </dd>
           </dl>
-          <Button
-            variant={ButtonVariant.primary}
-            className="w-full"
-            onClick={onClickToNavigation}
-          >
-            {texts.common.checkout.toUpperCase()}
-          </Button>
+          {cartItems.length > 0 && (
+            <Button
+              variant={ButtonVariant.primary}
+              className="w-full"
+              disabled={cartItems?.length <= 0}
+              onClick={onClickToNavigation}
+            >
+              {texts.common.checkout.toUpperCase()}
+            </Button>
+          )}
         </div>
       </div>
     </Backdrop>

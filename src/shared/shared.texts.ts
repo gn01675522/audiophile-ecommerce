@@ -11,6 +11,9 @@ export const texts = {
     checkout: "checkout",
     total: "total",
     youMayAlsoLike: "you may also like",
+    goBack: "Go Back",
+    summary: "summary",
+    continueAndPay: "continue & pay",
   },
   category: {
     headPhones: "headphones",
@@ -49,5 +52,19 @@ export const texts = {
         "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.",
       copyRight: "Copyright 2021. All Rights Reserved",
     },
+  },
+  checkout: {
+    billingDetails: "billing details",
+    shippingInfo: "shipping info",
+    paymentDetails: "payment details",
+    paymentMethod: "payment method",
+    shipping: "shipping",
+    VAT: "VAT (INCLUDED)",
+    grandTotal: "grand total",
+    cashOnDeliveryNote:
+      "The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.",
+    receiveMessage: "You will receive an email confirmation shortly.",
+    thanksForOrder: "THANK YOU FOR YOUR ORDER",
+    backToHome: "BACK TO HOME",
   },
 };

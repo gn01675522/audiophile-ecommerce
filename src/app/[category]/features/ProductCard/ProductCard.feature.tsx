@@ -10,6 +10,7 @@ import { getImageSettingHelper } from "./productCard.helper";
 
 import { texts } from "@/shared/shared.texts";
 import { cn } from "@/lib/utils/cn.utils";
+import { formatCurrency } from "@/lib/utils/formatter.utils";
 
 import {
   productCardWrapperClasses,
@@ -71,9 +72,9 @@ const ProductCard: FC<PropsType> = ({
           {productInfo.description}
         </p>
         {variant === "purchase" && (
-          <span
-            className={productCardPriceTagClasses}
-          >{`$ ${productInfo.price.toLocaleString()}`}</span>
+          <span className={productCardPriceTagClasses}>
+            {formatCurrency(productInfo.price)}
+          </span>
         )}
         <fieldset className="flex gap-4">
           {variant === "purchase" && (

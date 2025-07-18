@@ -1,9 +1,9 @@
 import Button from "@/components/client/Button/Button.component";
 import { ButtonVariant } from "@/components/client/Button/button.types";
 
-import { addItemsToCart } from "@/lib/utils/cartStorage.utils";
-
 import { texts } from "@/shared/shared.texts";
+
+import { useCartContext } from "@/lib/contexts/cart.context";
 
 import type { FC } from "react";
 import type { ProductType } from "@/app/api/products/productsRoute.type";
@@ -19,9 +19,10 @@ const ProductCardAddToCartButton: FC<PropsType> = ({
   resetQuantity,
   quantity,
 }) => {
+  const { addItemToCartHandler } = useCartContext();
   const onClickAddToCart = () => {
     if (quantity <= 0) return;
-    addItemsToCart({ ...productInfo, quantity });
+    addItemToCartHandler({ ...productInfo, quantity });
     resetQuantity();
   };
 
