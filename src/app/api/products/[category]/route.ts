@@ -2,11 +2,10 @@ import { NextResponse, NextRequest } from "next/server";
 
 import { productsDummyData } from "@/data/data.dummy";
 
-export const GET = async (
-  req: NextRequest,
-  { params }: { params: { category: string } }
-) => {
-  const { category } = params;
+type Params = { params: Promise<{ category: string }> };
+
+export const GET = async (req: NextRequest, { params }: Params) => {
+  const { category } = await params;
 
   try {
     const products = productsDummyData.filter(
