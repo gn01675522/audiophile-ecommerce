@@ -1,6 +1,6 @@
 "use client";
 import { useCartContext } from "@/lib/contexts/cart.context";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import RWDImage from "@/components/server/RWDImage/RWDImage.component";
 import NumberInput from "@/components/client/NumberInput/NumberInput.component";
@@ -50,6 +50,10 @@ const ProductCard: FC<PropsType> = ({
     useCountQuantity();
 
   const transformImage = getImageSettingHelper(productInfo, variant);
+  const combinedWrapperClasses = cn(
+    productCardWrapperClasses(variant),
+    wrapperClass
+  );
 
   const onClickAddToCart = () => {
     if (quantity <= 0) return;
@@ -59,8 +63,7 @@ const ProductCard: FC<PropsType> = ({
   };
 
   return (
-    <article className={cn(productCardWrapperClasses(variant), wrapperClass)}>
-      <ToastContainer position="bottom-right" />
+    <article className={combinedWrapperClasses}>
       <figure className={productCardFigureClasses}>
         <RWDImage
           alt={`${productInfo.name} product picture.`}

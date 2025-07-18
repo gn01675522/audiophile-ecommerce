@@ -8,6 +8,8 @@ import { getProductById } from "@/lib/apis/apis";
 
 import {
   productDetailWrapperClasses,
+  productDetailConetentWrapperClasses,
+  productDetailContentClasses,
   productDetailGoBackClasses,
 } from "./page.styles";
 
@@ -25,11 +27,15 @@ const ProductDetail: FC<PropsType> = async ({ params }) => {
 
   return (
     <section className={productDetailWrapperClasses}>
-      <GoBackButton className={productDetailGoBackClasses} />
-      <ProductCard variant="purchase" productInfo={result} />
-      <ProductDetailSection data={result} />
-      <ImageGallery data={result} />
-      <AlsoLikeSection data={result} />
+      <div className={productDetailConetentWrapperClasses}>
+        <GoBackButton className={productDetailGoBackClasses} />
+        <div className={productDetailContentClasses}>
+          <ProductCard variant="purchase" productInfo={result} />
+          <ProductDetailSection data={result} />
+          <ImageGallery data={result} />
+          <AlsoLikeSection data={result} />
+        </div>
+      </div>
     </section>
   );
 };
