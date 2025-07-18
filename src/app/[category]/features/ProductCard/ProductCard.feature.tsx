@@ -1,4 +1,7 @@
 "use client";
+import { useCartContext } from "@/lib/contexts/cart.context";
+import { ToastContainer, toast } from "react-toastify";
+
 import RWDImage from "@/components/server/RWDImage/RWDImage.component";
 import NumberInput from "@/components/client/NumberInput/NumberInput.component";
 import ProductCardViewButton from "./ProductCardViewButton.component";
@@ -42,12 +45,22 @@ const ProductCard: FC<PropsType> = ({
   variant = "preview",
   wrapperClass,
 }) => {
+  const { addItemToCartHandler } = useCartContext();
   const { quantity, changeQuantityHandler, resetQuantityHandler } =
     useCountQuantity();
+
   const transformImage = getImageSettingHelper(productInfo, variant);
+
+  const onClickAddToCart = () => {
+    if (quantity <= 0) return;
+    addItemToCartHandler({ ...productInfo, quantity });
+    toast(`${productInfo.name} has been added to your cart.`);
+    resetQuantityHandler();
+  };
 
   return (
     <article className={cn(productCardWrapperClasses(variant), wrapperClass)}>
+      <ToastContainer position="bottom-right" />
       <figure className={productCardFigureClasses}>
         <RWDImage
           alt={`${productInfo.name} product picture.`}
@@ -84,11 +97,7 @@ const ProductCard: FC<PropsType> = ({
                 min={inputMinValue}
                 onClickToChangeQuantity={changeQuantityHandler}
               />
-              <ProductCardAddToCartButton
-                productInfo={productInfo}
-                resetQuantity={resetQuantityHandler}
-                quantity={quantity}
-              />
+              <ProductCardAddToCartButton onClickAddToCart={onClickAddToCart} />
             </>
           )}
           {variant === "preview" && (

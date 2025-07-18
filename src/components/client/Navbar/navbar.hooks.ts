@@ -26,7 +26,6 @@ export const useOverlayControl = () => {
         !cartRef.current.contains(target) &&
         !target.closest("#cart")
       ) {
-        console.log("trigger");
         setIsCartOpen(false);
       }
     };
