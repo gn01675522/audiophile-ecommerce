@@ -77,7 +77,7 @@ export const useCheckoutFormControl = () => {
   const [isFinished, setIsFinished] = useState(false);
   const [completedOrderId, setCompletedOrderId] = useState("");
 
-  const { cartDetails } = useCartContext();
+  const { cartDetails, getCartDetailsHandler } = useCartContext();
 
   const formRef = useRef<FormDataTypes>(defaultFormData);
   const router = useRouter();
@@ -126,6 +126,7 @@ export const useCheckoutFormControl = () => {
     );
 
     const returnedId = addCartItemsToOrder(newData);
+    getCartDetailsHandler();
     setCompletedOrderId(returnedId);
 
     setIsFinished(true);

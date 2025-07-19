@@ -20,6 +20,8 @@ export const useCartAction = () => {
   const [cartDetails, setCartDetails] =
     useState<ICartDetail>(defaultCartDetail);
 
+  const getCartDetailsHandler = () => setCartDetails(getCartDetails());
+
   const addItemToCartHandler = (product: IProductInCart) => {
     addItemsToCart(product);
     setCartDetails(getCartDetails());
@@ -61,6 +63,7 @@ export const useCartAction = () => {
 
   return {
     cartDetails,
+    getCartDetailsHandler,
     addItemToCartHandler,
     changeQuantityHandler,
     clearCartHandler,
