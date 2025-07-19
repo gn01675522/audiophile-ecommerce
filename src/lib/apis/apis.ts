@@ -6,13 +6,15 @@ import { fetcherHelper } from "../utils/fetcher.utils";
 import type { ProductType } from "@/app/api/products/productsRoute.type";
 import type { PRODUCT_CATEGORY_CLASSES } from "@/shared/shared.types";
 
+const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
+
 export const apiProductsByCategory = (
   category: PRODUCT_CATEGORY_CLASSES
 ): string => {
   const apiCategory = PRODUCT_CATEGORY[category];
   const safeInput = encodeURIComponent(apiCategory.trim());
 
-  return `http://localhost:3000/api/products/${safeInput}`;
+  return `${baseUrl}/api/products/${safeInput}`;
 };
 
 export const getProductsByCategory = async (
@@ -31,7 +33,7 @@ export const apiProductById = (
   const safeCateogry = encodeURIComponent(apiCategory.trim());
   const safeId = encodeURIComponent(id.trim());
 
-  return `http://localhost:3000/api/products/${safeCateogry}/${safeId}`;
+  return `${baseUrl}/api/products/${safeCateogry}/${safeId}`;
 };
 
 export const getProductById = async (

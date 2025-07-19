@@ -9,12 +9,21 @@ export const fetcherHelper = async <T>({
   url,
   options = {},
 }: FetchArgType): Promise<ResponseType<T>> => {
-  const res = await fetch(url, {
-    cache: "no-store",
-    ...options,
-  });
+  try {
+    const res = await fetch(url, {
+      cache: "no-store",
+      ...options,
+    });
 
-  const data = await res.json();
+    if (!res.ok) {
+      throw new Error(`Fetch failed: ${res.status} ${res.statusText}`);
+    }
 
-  return data;
+    const data: ResponseType<T> = await res.json();
+
+    return data;
+  } catch (e) {
+    console.error("Fetcher Error:", e);
+    throw e;
+  }
 };
