@@ -9,6 +9,6 @@ export const categoryCardWrapperClasses = mergeRWDClassesHelper({
 
 export const categoryCardContentWrapperClasses = mergeRWDClassesHelper({
   [RWD_VARIANTS.base]:
-    "relative flex flex-col w-full h-[165px] gap-[17px] items-center pt-22 pb-5.5 bg-ghost rounded-lg",
+    "relative flex flex-col w-full h-[165px] gap-[17px] items-center pt-22 pb-5.5 bg-ghost rounded-lg hover:bg-[#e0e0e0]",
   [RWD_VARIANTS.xlarge]: "xl:h-51 xl:pb-6 xl:pt-29",
 });
