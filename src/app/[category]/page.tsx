@@ -1,8 +1,12 @@
+import { notFound } from "next/navigation";
+
 import ProductCard from "./features/ProductCard/ProductCard.feature";
 
 import { getProductsByCategory } from "@/lib/apis/apis";
 
 import { productIntroWrapperClasses } from "./page.styles";
+
+import { PRODUCT_CATEGORY } from "@/shared/shared.types";
 
 import {
   productInfoHeaderClasses,
@@ -19,6 +23,10 @@ type PropsType = {
 
 const CategoryPage: FC<PropsType> = async ({ params }) => {
   const { category } = await params;
+
+  if (!Object.values(PRODUCT_CATEGORY).some((value) => value === category)) {
+    notFound();
+  }
 
   const res = await getProductsByCategory(category);
 

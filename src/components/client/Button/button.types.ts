@@ -6,6 +6,7 @@ export enum ButtonVariant {
   black = "black",
   transparent = "transparent",
   ghost = "ghost",
+  error = "error",
 }
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {

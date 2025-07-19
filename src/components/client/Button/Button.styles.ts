@@ -38,4 +38,10 @@ export const buttonClassByVariant = {
     [CLASS_SEGMENT.style]: "text-[#00000080]",
     [CLASS_SEGMENT.behavior]: "hover:text-primary",
   }),
+  error: mergeSegmentClassesHelper({
+    [CLASS_SEGMENT.base]: buttonBaseSetting,
+    [CLASS_SEGMENT.structure]: "w-[160px] h-[48px]",
+    [CLASS_SEGMENT.style]: "bg-error text-white",
+    [CLASS_SEGMENT.behavior]: "hover:bg-error-lt",
+  }),
 };

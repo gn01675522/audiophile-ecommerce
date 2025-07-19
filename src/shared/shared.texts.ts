@@ -14,6 +14,7 @@ export const texts = {
     goBack: "Go Back",
     summary: "summary",
     continueAndPay: "continue & pay",
+    tryAgain: "try again",
   },
   category: {
     headPhones: "headphones",
