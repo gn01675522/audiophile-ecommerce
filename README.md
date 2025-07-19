@@ -56,7 +56,7 @@ Users should be able to:
 
 	1.	Improved my ability to organize a scalable and maintainable folder structure
 	2.	Strengthened experience in separating business logic from UI components
-	3.	Learned how to create clean and maintainable utility structures for Tailwind CSS without using external libraries like cva
+	3.	Designed maintainable and clearly structured data formats for Tailwind without relying on the cva library
 	4.	Gained deeper insights into how to properly use the Next.js Image component for optimized image handling
 	5.	Developed a solid understanding of Server and Client Components in Next.js, including when and how to use each effectively
 
