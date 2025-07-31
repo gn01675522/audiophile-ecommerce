@@ -1,6 +1,6 @@
 import { texts } from "@/shared/shared.texts";
 
-import type { ICartDetail } from "@/lib/utils/cartStorage.utils";
+import type { ICartDetail } from "@/features/cart/utils/cartStorage.utils";
 
 export const totalsSetting = (cartDetails: ICartDetail) => [
   {

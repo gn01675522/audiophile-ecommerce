@@ -5,7 +5,7 @@ import type {
   ORDER_FORM_FIELD_CLASSES,
   PAYMENT_METHOD_CLASSES,
 } from "@/shared/shared.types";
-import type { ICartDetail } from "@/lib/utils/cartStorage.utils";
+import type { ICartDetail } from "@/features/cart/utils/cartStorage.utils";
 
 export const mappingFormConfigHelper = (
   keyMap: ORDER_FORM_FIELD_CLASSES[],

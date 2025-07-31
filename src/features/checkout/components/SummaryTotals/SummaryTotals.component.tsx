@@ -7,7 +7,7 @@ import { totalsSetting } from "./summaryTotals.setting";
 import { summaryTotalsItemsClasses } from "./SummaryTotals.style";
 
 import type { FC } from "react";
-import type { ICartDetail } from "@/lib/utils/cartStorage.utils";
+import type { ICartDetail } from "@/features/cart/utils/cartStorage.utils";
 
 type PropsType = {
   cartDetails: ICartDetail;

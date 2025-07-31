@@ -1,7 +1,7 @@
 import ItemCard from "@/components/ItemCard/ItemCard.component";
 
 import type { FC } from "react";
-import type { IProductInCart } from "@/lib/utils/cartStorage.utils";
+import type { IProductInCart } from "@/features/cart/utils/cartStorage.utils";
 
 type PropsType = {
   cartItems: IProductInCart[];

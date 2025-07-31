@@ -9,7 +9,7 @@ import OrderSuccessCardTitle from "../../components/OrderSuccessCardTitle/OrderS
 
 import { texts } from "@/shared/shared.texts";
 
-import { getOrders } from "@/lib/utils/cartStorage.utils";
+import { getOrders } from "@/features/cart/utils/cartStorage.utils";
 
 import {
   orderSuccessModalBackdropClasses,

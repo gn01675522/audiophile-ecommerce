@@ -12,7 +12,7 @@ import {
   CheckoutForm,
 } from "@/features/checkout";
 
-import { useCartContext } from "@/lib/contexts/cart.context";
+import { useCartContext } from "@/features/cart";
 
 import {
   checkoutClasses,

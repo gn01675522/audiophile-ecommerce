@@ -1,5 +1,5 @@
 "use client";
-import { useCartContext } from "@/lib/contexts/cart.context";
+import { useCartContext } from "@/features/cart";
 import { toast } from "react-toastify";
 
 import { RWDImage } from "@/components/RWDImage";

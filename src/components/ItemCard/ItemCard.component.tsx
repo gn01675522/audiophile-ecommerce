@@ -7,7 +7,7 @@ import NumberInput from "@/components/NumberInput/NumberInput.component";
 import { formatCurrency } from "@/lib/utils/formatter.utils";
 
 import type { FC, MouseEvent } from "react";
-import type { IProductInCart } from "@/lib/utils/cartStorage.utils";
+import type { IProductInCart } from "@/features/cart/utils/cartStorage.utils";
 
 type PropsType = {
   item: IProductInCart;

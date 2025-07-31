@@ -1,5 +1,5 @@
 import { Manrope } from "next/font/google";
-import { CartContextProvider } from "@/lib/contexts/cart.context";
+import { CartContextProvider } from "@/features/cart/context/cart.context";
 import { ToastContainer } from "react-toastify";
 
 import { Navbar } from "@/features/navigation";

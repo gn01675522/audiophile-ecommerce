@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useCartContext } from "@/lib/contexts/cart.context";
+import { useCartContext } from "@/features/cart";
 
 import { PAYMENT_METHOD } from "@/shared/shared.types";
 import { ORDER_FORM_FIELD } from "@/shared/shared.types";
 import { checkoutFormValidationRules } from "../config/checkoutForm.rules";
-import { addCartItemsToOrder } from "@/lib/utils/cartStorage.utils";
+import { addCartItemsToOrder } from "@/features/cart/utils/cartStorage.utils";
 import { combinedOrderHelper } from "../utils/checkout.utils";
 
 import type { ChangeEvent } from "react";

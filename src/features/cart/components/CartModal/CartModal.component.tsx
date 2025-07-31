@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useCartContext } from "@/lib/contexts/cart.context";
+import { useCartContext } from "../../context/cart.context";
 
 import { Backdrop } from "@/components/Backdrop";
 import { Button, ButtonVariant } from "@/components/Button";

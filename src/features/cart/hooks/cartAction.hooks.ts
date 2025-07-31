@@ -6,7 +6,7 @@ import {
   getCartDetails,
   defaultCartDetail,
   addItemsToCart,
-} from "@/lib/utils/cartStorage.utils";
+} from "@/features/cart/utils/cartStorage.utils";
 
 import { BUTTON_ACTIONS } from "@/shared/shared.types";
 
@@ -14,7 +14,7 @@ import type { MouseEvent } from "react";
 import type {
   ICartDetail,
   IProductInCart,
-} from "@/lib/utils/cartStorage.utils";
+} from "@/features/cart/utils/cartStorage.utils";
 
 export const useCartAction = () => {
   const [cartDetails, setCartDetails] =

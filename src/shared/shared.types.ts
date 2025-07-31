@@ -1,4 +1,4 @@
-import { IProductInCart } from "@/lib/utils/cartStorage.utils";
+import { IProductInCart } from "@/features/cart/utils/cartStorage.utils";
 
 export const PRODUCT_CATEGORY = {
   headphones: "headphones",
