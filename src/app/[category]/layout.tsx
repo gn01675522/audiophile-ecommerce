@@ -1,5 +1,5 @@
-import CategoryNav from "../features/CategoryNav/CategoryNav.feature";
-import AboutSection from "../features/AboutSection/AboutSection.feature";
+import { CategoryNav } from "@/features/navigation";
+import { AboutSection } from "@/features/marketing";
 
 import { categoryLayoutMarketingInfoWrapperClasses } from "./layout.styles";
 

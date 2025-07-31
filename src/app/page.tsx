@@ -1,7 +1,9 @@
-import HeroBanner from "@/components/server/HeroBanner/HeroBanner.component";
-import CategoryNav from "./features/CategoryNav/CategoryNav.feature";
-import PromotionSection from "./features/PromotionSection/PromotionSection.component";
-import AboutSection from "./features/AboutSection/AboutSection.feature";
+import {
+  HeroBanner,
+  AboutSection,
+  PromotionSection,
+} from "@/features/marketing";
+import { CategoryNav } from "@/features/navigation";
 
 import { layoutSectionWrapperClasses } from "./page.styles";
 

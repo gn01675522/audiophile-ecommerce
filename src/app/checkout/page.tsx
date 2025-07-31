@@ -1,12 +1,15 @@
 "use client";
-import { CheckoutContextProvider } from "./page.context";
-import { useCheckoutContext } from "./page.context";
+import { CheckoutContextProvider } from "../../features/checkout/context/Checkout.context";
+import { useCheckoutContext } from "../../features/checkout/context/Checkout.context";
 
 import Form from "next/form";
 import GoBackButton from "@/components/client/GoBackButton/GoBackButton.component";
-import SummaryCard from "./features/SummaryCard/SummaryCard.feature";
-import CheckoutForm from "./features/CheckoutForm/CheckoutForm.feature";
-import OrderSuccessModal from "./features/OrderSuccessModal/OrderSuccessModal.feature";
+
+import {
+  SummaryCard,
+  OrderSuccessModal,
+  CheckoutForm,
+} from "@/features/checkout";
 
 import { useCartContext } from "@/lib/contexts/cart.context";
 

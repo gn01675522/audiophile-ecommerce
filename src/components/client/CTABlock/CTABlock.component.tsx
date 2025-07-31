@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Button from "../Button/Button.component";
-import { ButtonVariant } from "../Button/button.types";
+import { Button, ButtonVariant } from "@/components/Button";
 
 import {
   ctaBlockWrapperClasses,

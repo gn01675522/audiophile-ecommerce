@@ -2,8 +2,7 @@
 
 import { useEffect } from "react";
 
-import Button from "@/components/client/Button/Button.component";
-import { ButtonVariant } from "@/components/client/Button/button.types";
+import { Button, ButtonVariant } from "@/components/Button";
 
 import { texts } from "@/shared/shared.texts";
 

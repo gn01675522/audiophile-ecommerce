@@ -2,13 +2,11 @@
 import { useRouter } from "next/navigation";
 
 import CircleSVG from "@/components/server/CircleSVG/CircleSVG.component";
-import Button from "../Button/Button.component";
+import { Button, ButtonVariant } from "@/components/Button";
 import RWDImage from "@/components/server/RWDImage/RWDImage.component";
 import zx9SpeakerDesktop from "@/assets/intro-card/desktop/image-speaker-zx9.png";
 import zx9SpeakerTablet from "@/assets/intro-card/tablet/image-speaker-zx9.png";
 import zx9SpeakerMobile from "@/assets/intro-card/mobile/image-speaker-zx9.png";
-
-import { ButtonVariant } from "../Button/button.types";
 
 import {
   introCardWrapperClasses,

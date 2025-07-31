@@ -1,10 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-import Button from "../Button/Button.component";
-import { ButtonVariant } from "../Button/button.types";
-import { twMerge } from "tailwind-merge";
-import clsx from "clsx";
+import { Button, ButtonVariant } from "@/components/Button";
+
+import { cn } from "@/lib/utils/cn.utils";
 
 import { basicIntroCardWrapperClasses } from "./BasicIntroCard.styles";
 
@@ -20,9 +19,7 @@ type PropsType = {
 const BasicIntroCard: FC<PropsType> = ({ route, className }) => {
   const router = useRouter();
   const cardTitle = `${texts.product.yx1.name} ${texts.product.yx1.category}`;
-  const wrapperCombined = twMerge(
-    clsx(basicIntroCardWrapperClasses, className)
-  );
+  const wrapperCombined = cn(basicIntroCardWrapperClasses, className);
 
   const onClickToNavigation = () => {
     router.push(route);

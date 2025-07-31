@@ -1,4 +1,4 @@
-import Logo from "../Logo/Logo.component";
+import Logo from "../../../features/navigation/components/LogoSVG/Logo.component";
 import LinkList from "../LinkList/LinkList.component";
 import InstagramSVG from "../InstagramSVG/InstagramSVG.component";
 import FacebookSVG from "../FacebookSVG/FacebookSVG.component";

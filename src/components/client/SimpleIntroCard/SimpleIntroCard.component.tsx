@@ -5,8 +5,7 @@ import RWDImage from "@/components/server/RWDImage/RWDImage.component";
 import zx7SpeakerDesktop from "@/assets/intro-card/desktop/image-speaker-zx7.jpg";
 import zx7SpeakerTablet from "@/assets/intro-card/tablet/image-speaker-zx7.jpg";
 import zx7SpeakerMobile from "@/assets/intro-card/mobile/image-speaker-zx7.jpg";
-import Button from "../Button/Button.component";
-import { ButtonVariant } from "../Button/button.types";
+import { Button, ButtonVariant } from "@/components/Button";
 
 import { texts } from "@/shared/shared.texts";
 

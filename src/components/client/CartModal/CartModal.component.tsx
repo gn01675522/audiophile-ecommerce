@@ -3,8 +3,7 @@ import { useRouter } from "next/navigation";
 import { useCartContext } from "@/lib/contexts/cart.context";
 
 import Backdrop from "@/components/server/Backdrop/Backdrop.component";
-import Button from "../Button/Button.component";
-import { ButtonVariant } from "../Button/button.types";
+import { Button, ButtonVariant } from "@/components/Button";
 import CartItem from "../CartItem/CartItem.component";
 
 import { texts } from "@/shared/shared.texts";

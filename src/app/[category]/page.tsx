@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import ProductCard from "./features/ProductCard/ProductCard.feature";
+import { ProductCard } from "@/features/product";
 
 import { getProductsByCategory } from "@/lib/apis/apis";
 

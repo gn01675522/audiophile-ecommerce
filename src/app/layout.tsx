@@ -2,7 +2,7 @@ import { Manrope } from "next/font/google";
 import { CartContextProvider } from "@/lib/contexts/cart.context";
 import { ToastContainer } from "react-toastify";
 
-import Navbar from "@/components/client/Navbar/Navbar.component";
+import { Navbar } from "@/features/navigation";
 import Footer from "@/components/server/Footer/Footer.component";
 
 import type { FC, ReactNode } from "react";

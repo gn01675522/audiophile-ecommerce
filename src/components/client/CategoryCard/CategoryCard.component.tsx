@@ -3,10 +3,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import RightArrowSVG from "@/components/server/RightArrowSVG/RightArrowSVG.component";
-import Button from "../../client/Button/Button.component";
-import { ButtonVariant } from "../../client/Button/button.types";
+import { Button, ButtonVariant } from "@/components/Button";
 import headPhonesImg from "@/assets/category-card/image-category-headphones.png";
 import speakersImg from "@/assets/category-card/image-category-speakers.png";
 import earphonesImg from "@/assets/category-card/image-category-earphones.png";
