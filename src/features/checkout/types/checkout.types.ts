@@ -1,4 +1,4 @@
-import type { INPUT_TYPES_CLASSES } from "@/components/client/Input/input.types";
+import type { INPUT_TYPES_CLASSES } from "@/components/Input";
 import type { ORDER_FORM_FIELD_CLASSES } from "@/shared/shared.types";
 
 export type CheckoutFieldSettingTypes = {
