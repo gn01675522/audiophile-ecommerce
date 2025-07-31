@@ -2,7 +2,7 @@
 import { texts } from "@/shared/shared.texts";
 import { formatCurrency } from "@/lib/utils/formatter.utils";
 
-import { totalsSetting } from "./summaryTotals.setting";
+import { totalsSetting } from "../../config/summaryTotals.setting";
 
 import { summaryTotalsItemsClasses } from "./SummaryTotals.style";
 
