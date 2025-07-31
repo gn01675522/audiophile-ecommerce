@@ -2,8 +2,8 @@
 import { useCheckoutContext } from "../../context/Checkout.context";
 
 import { Button, ButtonVariant } from "@/components/Button";
-import CheckMarkSVG from "@/components/server/CheckMarkSVG/CheckMarkSVG.componen";
-import Backdrop from "@/components/server/Backdrop/Backdrop.component";
+import { CheckMarkSVG } from "@/components/SVGIcons";
+import { Backdrop } from "@/components/Backdrop";
 import OrderSuccessDetailsCard from "../../components/OrderSuccessDetailsCard/OrderSuccessDetailsCard.component";
 import OrderSuccessCardTitle from "../../components/OrderSuccessCardTitle/OrderSuccessCardTitle.component";
 

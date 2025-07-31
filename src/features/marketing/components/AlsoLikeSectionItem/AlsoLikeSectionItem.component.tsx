@@ -1,4 +1,4 @@
-import RWDImage from "@/components/server/RWDImage/RWDImage.component";
+import { RWDImage } from "@/components/RWDImage";
 import { Button, ButtonVariant } from "@/components/Button";
 
 import {

@@ -1,9 +1,10 @@
 "use client";
+import Form from "next/form";
+
 import { CheckoutContextProvider } from "../../features/checkout/context/Checkout.context";
 import { useCheckoutContext } from "../../features/checkout/context/Checkout.context";
 
-import Form from "next/form";
-import GoBackButton from "@/components/client/GoBackButton/GoBackButton.component";
+import { GoBackButton } from "@/components/GoBackButton";
 
 import {
   SummaryCard,

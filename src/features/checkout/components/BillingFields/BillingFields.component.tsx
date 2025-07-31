@@ -1,6 +1,7 @@
 "use client";
 import { useCheckoutContext } from "@/features/checkout/context/Checkout.context";
-import Input from "@/components/client/Input/Input.component";
+
+import { Input } from "@/components/Input";
 
 import { formBillingSetting } from "./BillingFields.setting";
 import { ORDER_FORM_FIELD } from "@/shared/shared.types";

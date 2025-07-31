@@ -2,8 +2,8 @@
 import { useCartContext } from "@/lib/contexts/cart.context";
 import { toast } from "react-toastify";
 
-import RWDImage from "@/components/server/RWDImage/RWDImage.component";
-import NumberInput from "@/components/client/NumberInput/NumberInput.component";
+import { RWDImage } from "@/components/RWDImage";
+import NumberInput from "@/components/NumberInput/NumberInput.component";
 import ProductCardViewButton from "../../components/ProductCardViewButton/ProductCardViewButton.component";
 import ProductCardAddToCartButton from "../../components/ProductCardAddToCartButton/ProductCardAddToCartButton.component";
 

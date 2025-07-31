@@ -1,9 +1,10 @@
 "use client";
 import { useCheckoutContext } from "@/features/checkout/context/Checkout.context";
 
-import RadioInput from "@/components/client/RadioInput/RadioInput.component";
-import Input from "@/components/client/Input/Input.component";
-import CashOnDeliverySVG from "@/components/server/CashOnDeliverySVG/CashOnDeliverySVG.component";
+import { RadioInput } from "@/components/RadioInput";
+import { Input } from "@/components/Input";
+
+import { CashOnDeliverySVG } from "@/components/SVGIcons";
 
 import { formPaymentSetting, formEMoneySetting } from "./PaymentFields.setting";
 

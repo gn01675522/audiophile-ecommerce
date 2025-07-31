@@ -1,6 +1,6 @@
-import IntroCard from "@/components/client/IntroCard/IntroCard.component";
-import SimpleIntroCard from "@/components/client/SimpleIntroCard/SimpleIntroCard.component";
-import SplitCard from "@/components/server/SplitCard/SplitCard.component";
+import IntroCard from "../IntroCard/IntroCard.component";
+import SimpleIntroCard from "../SimpleIntroCard/SimpleIntroCard.component";
+import SplitCard from "../SplitCard/SplitCard.component";
 
 import { promotionSectionClasses } from "./PromotionSection.styles";
 

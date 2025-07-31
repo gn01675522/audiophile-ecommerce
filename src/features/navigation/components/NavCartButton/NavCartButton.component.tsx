@@ -1,4 +1,4 @@
-import CartSVG from "@/components/server/CartSVG/CartSVG.component";
+import { CartSVG } from "@/components/SVGIcons";
 
 import type { FC } from "react";
 

@@ -1,7 +1,8 @@
 import { ORDER_FORM_FIELD } from "@/shared/shared.types";
-import { INPUT_TYPES } from "@/components/client/Input/input.types";
 
-import type { FormSettingTypes } from "@/features/checkout/config/pageForm.types";
+import { INPUT_TYPES } from "@/components/Input";
+
+import type { FormSettingTypes } from "../../types/checkout.types";
 
 export const formBillingSetting: FormSettingTypes = {
   [ORDER_FORM_FIELD.name]: {

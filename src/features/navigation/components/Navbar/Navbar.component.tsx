@@ -1,6 +1,6 @@
 "use client";
-import Logo from "@/features/navigation/components/LogoSVG/Logo.component";
-import CartModal from "../../../../components/client/CartModal/CartModal.component";
+import { LogoSVG } from "@/components/SVGIcons";
+import { CartModal } from "@/features/cart";
 import Hamburger from "../../components/Hamburger/Hamburger.component";
 import NavCartButton from "../../components/NavCartButton/NavCartButton.component";
 import DropdownList from "../../components/DropdownList/DropdownList.component";
@@ -33,7 +33,7 @@ export const Navbar: FC = () => {
     <nav className={navbarWrapperClasses}>
       <Hamburger onClick={onClickDropdownHandler} className="xl:hidden" />
 
-      <Logo className={navbarLogoClasses} />
+      <LogoSVG className={navbarLogoClasses} />
 
       {isDropdownOpen && <DropdownList ref={dropDownRef} />}
       <NavList linkList={navLinksForDesktop} />

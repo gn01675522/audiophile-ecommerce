@@ -1,4 +1,4 @@
-import CartItem from "@/components/client/CartItem/CartItem.component";
+import ItemCard from "@/components/ItemCard/ItemCard.component";
 
 import type { FC } from "react";
 import type { IProductInCart } from "@/lib/utils/cartStorage.utils";
@@ -11,7 +11,7 @@ const SummaryItemList: FC<PropsType> = ({ cartItems }) => {
   return (
     <ul className="flex flex-col gap-6">
       {cartItems.map((item) => (
-        <CartItem key={item.id} item={item} />
+        <ItemCard key={item.id} item={item} />
       ))}
     </ul>
   );

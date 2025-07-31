@@ -1,5 +1,5 @@
-import Backdrop from "@/components/server/Backdrop/Backdrop.component";
-import CategoryCard from "@/components/client/CategoryCard/CategoryCard.component";
+import { Backdrop } from "@/components/Backdrop";
+import CategoryCard from "@/components/CategoryCard/CategoryCard.component";
 
 import { linksSetting } from "@/shared/shared.setting";
 

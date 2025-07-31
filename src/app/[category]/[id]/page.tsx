@@ -3,7 +3,7 @@ import { ProductDetailSection } from "@/features/product";
 import { ImageGallery } from "@/features/product";
 import { AlsoLikeSection } from "@/features/marketing";
 
-import GoBackButton from "@/components/client/GoBackButton/GoBackButton.component";
+import { GoBackButton } from "@/components/GoBackButton";
 
 import { getProductById } from "@/lib/apis/apis";
 

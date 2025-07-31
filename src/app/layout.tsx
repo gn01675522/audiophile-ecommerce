@@ -3,7 +3,7 @@ import { CartContextProvider } from "@/lib/contexts/cart.context";
 import { ToastContainer } from "react-toastify";
 
 import { Navbar } from "@/features/navigation";
-import Footer from "@/components/server/Footer/Footer.component";
+import { Footer } from "@/features/navigation";
 
 import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";

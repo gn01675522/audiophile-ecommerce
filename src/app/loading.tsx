@@ -1,4 +1,4 @@
-import SpinnerSVG from "@/components/server/SpinnerSVG/SpinnerSVG.component";
+import { SpinnerSVG } from "@/components/SVGIcons";
 
 import type { FC } from "react";
 

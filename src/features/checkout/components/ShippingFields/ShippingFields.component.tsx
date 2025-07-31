@@ -1,7 +1,7 @@
 "use client";
 import { useCheckoutContext } from "@/features/checkout/context/Checkout.context";
 
-import Input from "@/components/client/Input/Input.component";
+import { Input } from "@/components/Input";
 
 import { texts } from "@/shared/shared.texts";
 

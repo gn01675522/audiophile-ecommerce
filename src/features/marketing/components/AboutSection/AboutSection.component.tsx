@@ -1,4 +1,4 @@
-import AboutCard from "@/components/server/AboutCard/AboutCard.component";
+import AboutCard from "../AboutCard/AboutCard.component";
 
 import type { FC } from "react";
 

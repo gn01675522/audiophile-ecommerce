@@ -1,8 +1,8 @@
-import CTABlock from "@/components/client/CTABlock/CTABlock.component";
+import CTABlock from "../CTABlock/CTABlock.component";
+import { RWDImage } from "@/components/RWDImage";
 import desktopBannerImage from "@/assets/banner/image-hero-desktop.jpg";
 import tabletBannerImage from "@/assets/banner/image-hero-tablet.jpg";
 import mobileBannerImage from "@/assets/banner/image-hero-mobile.jpg";
-import RWDImage from "@/components/server/RWDImage/RWDImage.component";
 
 import { PRODUCT_CATEGORY } from "@/shared/shared.types";
 

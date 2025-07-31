@@ -1,4 +1,4 @@
-import CategoryCard from "@/components/client/CategoryCard/CategoryCard.component";
+import CategoryCard from "@/components/CategoryCard/CategoryCard.component";
 
 import { linksSetting } from "@/shared/shared.setting";
 

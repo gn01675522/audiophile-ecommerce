@@ -1,6 +1,6 @@
 "use client";
-import CartItem from "@/components/client/CartItem/CartItem.component";
-import Divider from "@/components/server/Divider/Divider.component";
+import ItemCard from "@/components/ItemCard/ItemCard.component";
+import { Divider } from "@/components/Divider";
 
 import { useToggle } from "./OrderSuccessDetailsCard.hooks";
 
@@ -36,7 +36,7 @@ const OrderSuccessDetailsCard: FC<PropsType> = ({ orderDetails }) => {
         <ul className="flex flex-col gap-4">
           {showItemsQuantity.map((item) => {
             return (
-              <CartItem
+              <ItemCard
                 key={item.id}
                 item={item}
                 imgWidth={50}
