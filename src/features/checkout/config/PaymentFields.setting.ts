@@ -3,7 +3,7 @@ import { PAYMENT_METHOD } from "@/shared/shared.types";
 import { INPUT_TYPES } from "@/components/Input";
 
 import type { PAYMENT_METHOD_CLASSES } from "@/shared/shared.types";
-import type { CheckoutFieldSettingTypes } from "../../types/checkout.types";
+import type { CheckoutFieldSettingTypes } from "../types/checkout.types";
 
 export const formPaymentSetting = {
   title: "Payment Method",

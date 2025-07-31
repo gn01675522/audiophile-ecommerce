@@ -5,7 +5,7 @@ import { Input } from "@/components/Input";
 
 import { texts } from "@/shared/shared.texts";
 
-import { formShippingSetting } from "./ShippingFields.setting";
+import { formShippingSetting } from "../../config/ShippingFields.setting";
 import { ORDER_FORM_FIELD } from "@/shared/shared.types";
 import { mappingFormConfigHelper } from "../../utils/checkout.utils";
 

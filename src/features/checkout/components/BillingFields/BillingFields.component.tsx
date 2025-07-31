@@ -3,7 +3,7 @@ import { useCheckoutContext } from "@/features/checkout/context/Checkout.context
 
 import { Input } from "@/components/Input";
 
-import { formBillingSetting } from "./BillingFields.setting";
+import { formBillingSetting } from "../../config/BillingFields.setting";
 import { ORDER_FORM_FIELD } from "@/shared/shared.types";
 
 import { mappingFormConfigHelper } from "../../utils/checkout.utils";

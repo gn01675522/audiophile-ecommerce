@@ -6,7 +6,7 @@ import { Input } from "@/components/Input";
 
 import { CashOnDeliverySVG } from "@/components/SVGIcons";
 
-import { formPaymentSetting, formEMoneySetting } from "./PaymentFields.setting";
+import { formPaymentSetting, formEMoneySetting } from "../../config/PaymentFields.setting";
 
 import { PAYMENT_METHOD } from "@/shared/shared.types";
 

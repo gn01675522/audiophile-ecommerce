@@ -1,6 +1,6 @@
 import { ORDER_FORM_FIELD } from "@/shared/shared.types";
 
-import type { FormSettingTypes } from "../../types/checkout.types";
+import type { FormSettingTypes } from "../types/checkout.types";
 
 export const formShippingSetting: FormSettingTypes = {
   [ORDER_FORM_FIELD.address]: {

@@ -2,7 +2,7 @@ import { ORDER_FORM_FIELD } from "@/shared/shared.types";
 
 import { INPUT_TYPES } from "@/components/Input";
 
-import type { FormSettingTypes } from "../../types/checkout.types";
+import type { FormSettingTypes } from "../types/checkout.types";
 
 export const formBillingSetting: FormSettingTypes = {
   [ORDER_FORM_FIELD.name]: {
